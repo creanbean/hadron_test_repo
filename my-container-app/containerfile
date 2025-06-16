@@ -1,0 +1,16 @@
+#Base-Image (coding language used):
+FROM python:3.11-slim
+
+#Set_Directory
+WORKDIR /app
+
+
+#Copy python file into container
+COPY app.py .
+
+
+#Command to run when container starts: 
+CMD ["python", "app.py"]
+
+
+

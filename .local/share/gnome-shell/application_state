@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="org.gnome.Nautilus.desktop" score="13" last-seen="1750094885"/>
+    <application id="org.gnome.Settings.desktop" score="19" last-seen="1750094937"/>
+    <application id="gnome-background-panel.desktop" score="0" last-seen="0"/>
+    <application id="gnome-initial-setup.desktop" score="2" last-seen="1750094574"/>
+    <application id="org.gnome.Terminal.desktop" score="43" last-seen="1750095765"/>
+    <application id="gnome-system-monitor.desktop" score="0" last-seen="1750095455"/>
+    <application id="org.gnome.TwentyFortyEight.desktop" score="12" last-seen="1750094723"/>
+    <application id="gnome-display-panel.desktop" score="0" last-seen="0"/>
+  </context>
+</application-state>

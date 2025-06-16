@@ -1,0 +1,1829 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; object-src 'none'; script-src resource: chrome:; connect-src https:; img-src https: data: blob: chrome:; style-src 'unsafe-inline';">
+    <meta name="color-scheme" content="light dark">
+    <title data-l10n-id="newtab-page-title"></title>
+    <link rel="icon" type="image/png" href="chrome://branding/content/icon32.png"/>
+    <link rel="localization" href="branding/brand.ftl" />
+    <link rel="localization" href="toolkit/branding/brandings.ftl" />
+    <link rel="localization" href="browser/newtab/newtab.ftl" />
+    <link rel="stylesheet" href="chrome://global/skin/design-system/tokens-brand.css">
+    <link rel="stylesheet" href="chrome://browser/content/contentSearchUI.css" />
+    <link rel="stylesheet" href="chrome://activity-stream/content/css/activity-stream.css" />
+  </head>
+  <!-- Cached: Mon, 16 Jun 2025 18:35:19 GMT -->
+  <body class="activity-stream">
+    <div id="header-asrouter-container" role="presentation"></div>
+    <div id="root">
+      <div><menu class="personalizeButtonWrapper"><span><button class="icon icon-settings personalize-button" data-l10n-id="newtab-personalize-icon-label"></button><div class="customize-menu" role="dialog" data-l10n-id="newtab-personalize-dialog-label"><div class="close-button-wrapper"><button class="close-button" data-l10n-id="newtab-custom-close-button"></button></div><div class="home-section"><div id="shortcuts-section" class="section"><moz-toggle id="shortcuts-toggle" pressed="true" onToggle="function() {
+    [native code]
+}" data-preference="feeds.topsites" data-eventSource="TOP_SITES" data-l10n-id="newtab-custom-shortcuts-toggle" data-l10n-attrs="label, description"></moz-toggle><div><div class="more-info-top-wrapper"><div class="more-information"><select id="row-selector" class="selector" name="row-count" data-preference="topSitesRows" aria-labelledby="custom-shortcuts-title"><option selected="" value="1" data-l10n-id="newtab-custom-row-selector" data-l10n-args="{&quot;num&quot;: 1}"></option><option value="2" data-l10n-id="newtab-custom-row-selector" data-l10n-args="{&quot;num&quot;: 2}"></option><option value="3" data-l10n-id="newtab-custom-row-selector" data-l10n-args="{&quot;num&quot;: 3}"></option><option value="4" data-l10n-id="newtab-custom-row-selector" data-l10n-args="{&quot;num&quot;: 4}"></option></select><div class="check-wrapper" role="presentation"><input type="checkbox" id="sponsored-shortcuts" class="sponsored-checkbox" checked="" data-preference="showSponsoredTopSites" data-eventSource="SPONSORED_TOP_SITES"/><label class="sponsored" for="sponsored-shortcuts" data-l10n-id="newtab-custom-sponsored-sites"></label></div></div></div></div></div><div id="pocket-section" class="section"><label class="switch"><moz-toggle id="pocket-toggle" pressed="true" onToggle="function() {
+    [native code]
+}" aria-describedby="custom-pocket-subtitle" data-preference="feeds.section.topstories" data-eventSource="TOP_STORIES" data-l10n-id="newtab-custom-stories-toggle" data-l10n-attrs="label, description"></moz-toggle></label><div><div class="more-info-pocket-wrapper"><div class="more-information"><div class="check-wrapper" role="presentation"><input type="checkbox" id="sponsored-pocket" class="sponsored-checkbox" checked="" data-preference="showSponsored" data-eventSource="POCKET_SPOCS"/><label class="sponsored" for="sponsored-pocket" data-l10n-id="newtab-custom-pocket-sponsored"></label></div></div></div></div></div><div id="recent-section" class="section"><label class="switch"><moz-toggle id="highlights-toggle" onToggle="function() {
+    [native code]
+}" data-preference="feeds.section.highlights" data-eventSource="HIGHLIGHTS" data-l10n-id="newtab-custom-recent-toggle" data-l10n-attrs="label, description"></moz-toggle></label></div><span class="divider" role="separator"></span><div><button id="settings-link" class="external-link" data-l10n-id="newtab-custom-settings"></button></div></div></div></span></menu><div class="outer-wrapper ds-outer-wrapper-search-alignment ds-outer-wrapper-breakpoint-override visible-logo"><main><div class="non-collapsible-section"><div class="search-wrapper"><div class="logo-and-wordmark"><div class="logo"></div><div class="wordmark"></div></div><div class="search-inner-wrapper"><button class="search-handoff-button" tabindex="-1"><div class="fake-textbox"></div><input type="search" class="fake-editable" tabindex="-1" aria-hidden="true"/><div class="fake-caret"></div></button></div></div></div><div class="body-wrapper on"><div class="discovery-stream ds-layout"><div class="ds-column ds-column-12"><div class="ds-column-grid"><div><div class="ds-top-sites"><section class="collapsible-section top-sites" data-section-id="topsites"><div class="section-top-bar"><h3 class="section-title-container " style="visibility:hidden"><span class="section-title"><span data-l10n-id="newtab-section-header-topsites"></span></span><span class="learn-more-link-wrapper"></span></h3></div><div><ul class="top-sites-list"><li class="top-site-outer placeholder  "><div class="top-site-inner"><a class="top-site-button" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper"><div class=""></div></div></div><div class="title"><span dir="auto"><br/></span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer placeholder  "><div class="top-site-inner"><a class="top-site-button" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper"><div class=""></div></div></div><div class="title"><span dir="auto"><br/></span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer placeholder  "><div class="top-site-inner"><a class="top-site-button" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper"><div class=""></div></div></div><div class="title"><span dir="auto"><br/></span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer"><div class="top-site-inner"><a class="top-site-button" href="https://www.wikipedia.org/" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper" data-fallback="W"><div class="top-site-icon rich-icon" style="background-image:url(chrome://activity-stream/content/data/content/tippytop/images/wikipedia-org@2x.png)"></div></div></div><div class="title"><span dir="auto">Wikipedia</span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Wikipedia&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer"><div class="top-site-inner"><a class="top-site-button" href="https://www.youtube.com/" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper" data-fallback="Y"><div class="top-site-icon rich-icon" style="background-image:url(chrome://activity-stream/content/data/content/tippytop/images/youtube-com@2x.png)"></div></div></div><div class="title"><span dir="auto">YouTube</span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;YouTube&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer"><div class="top-site-inner"><a class="top-site-button" href="https://apnews.com/" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper letter-fallback" data-fallback="A" style="background-color:#2AC3A2"><div class=""></div></div></div><div class="title"><span dir="auto">AP News</span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;AP News&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer hide-for-narrow"><div class="top-site-inner"><a class="top-site-button" href="https://www.reddit.com/" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper" data-fallback="R"><div class="top-site-icon rich-icon" style="background-image:url(chrome://activity-stream/content/data/content/tippytop/images/reddit-com@2x.png)"></div></div></div><div class="title"><span dir="auto">Reddit</span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Reddit&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer placeholder hide-for-narrow add-button"><div class="top-site-inner"><a class="top-site-button" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper" data-fallback="n"><div class=""></div></div></div><div class="title"><span dir="auto" data-l10n-id="newtab-topsites-add-shortcut-label">newtab-topsites-add-shortcut-label</span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div class="topsite-impression-observer"></div></div></li></ul><div class="edit-topsites-wrapper"></div></div></section></div></div></div></div><style data-styles="[[null]]"></style></div><section class="collapsible-section ds-layout" data-section-id="topstories"><div class="section-top-bar"><h3 class="section-title-container "><span class="section-title"><span data-l10n-id="newtab-section-header-stories"></span></span><span class="learn-more-link-wrapper"><span class="learn-more-link"><a href="https://getpocket.com/firefox/new_tab_learn_more" data-l10n-id="newtab-pocket-learn-more"></a></span></span></h3></div><div><div class="discovery-stream ds-layout"><div class="ds-column ds-column-12"><div class="ds-column-grid"><div><div><div class="ds-card-grid    ds-card-grid-include-descriptions "><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/e1883038-32c6-401e-8114-d2747bf3c416.png" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fe1883038-32c6-401e-8114-d2747bf3c416.png 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fe1883038-32c6-401e-8114-d2747bf3c416.png 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fe1883038-32c6-401e-8114-d2747bf3c416.png 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fe1883038-32c6-401e-8114-d2747bf3c416.png 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fe1883038-32c6-401e-8114-d2747bf3c416.png 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fe1883038-32c6-401e-8114-d2747bf3c416.png 404w"/></picture></div><a href="https://edition.cnn.com/2025/06/14/us/minnesota-shootings-manhunt-vance-boelter-invs?utm_source=firefox-newtab-en-us" title="What We Know About the Minnesota Shooting Suspect" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">CNN</p><header class="title clamp">What We Know About the Minnesota Shooting Suspect</header><p class="excerpt clamp">Vance Boelter, 57, was arrested Sunday night in the city of Green Isle, Minnesota, where he lived, according to authorities.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;What We Know About the Minnesota Shooting Suspect&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s.zkcdn.net/Advertisers/eea832605fab4884b08ed6fa0c5dc2c1.png" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Feea832605fab4884b08ed6fa0c5dc2c1.png 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Feea832605fab4884b08ed6fa0c5dc2c1.png 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Feea832605fab4884b08ed6fa0c5dc2c1.png 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Feea832605fab4884b08ed6fa0c5dc2c1.png 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Feea832605fab4884b08ed6fa0c5dc2c1.png 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Feea832605fab4884b08ed6fa0c5dc2c1.png 404w"/></picture></div><a href="https://secure.creditmaven.com/50/14915?campaign=FF-SOV03-CompareCredit-Broad&amp;creative=GoldCardCrystals-2CardsNowCharging0IntroRatesUntilNEarly2027-20250611" title="2 Cards Now Charging 0% Intro Rates ​Until ​N​early 2027" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">comparecredit.com</p><header class="title clamp">2 Cards Now Charging 0% Intro Rates ​Until ​N​early 2027</header></div><div class="story-footer"><p class="story-sponsored-label  clamp"><span data-l10n-args="{&quot;sponsor&quot;:&quot;CompareCredit™&quot;}" data-l10n-id="newtab-label-sponsored-by"></span></p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;2 Cards Now Charging 0% Intro Rates ​Until ​N​early 2027&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://platform.vox.com/wp-content/uploads/sites/2/2025/06/GettyImages-968585794.jpg?quality=90&amp;strip=all&amp;crop=0%2C10.732984293194%2C100%2C78.534031413613&amp;w=1200" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fplatform.vox.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2025%2F06%2FGettyImages-968585794.jpg%3Fquality%3D90%26strip%3Dall%26crop%3D0%252C10.732984293194%252C100%252C78.534031413613%26w%3D1200 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fplatform.vox.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2025%2F06%2FGettyImages-968585794.jpg%3Fquality%3D90%26strip%3Dall%26crop%3D0%252C10.732984293194%252C100%252C78.534031413613%26w%3D1200 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fplatform.vox.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2025%2F06%2FGettyImages-968585794.jpg%3Fquality%3D90%26strip%3Dall%26crop%3D0%252C10.732984293194%252C100%252C78.534031413613%26w%3D1200 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fplatform.vox.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2025%2F06%2FGettyImages-968585794.jpg%3Fquality%3D90%26strip%3Dall%26crop%3D0%252C10.732984293194%252C100%252C78.534031413613%26w%3D1200 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fplatform.vox.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2025%2F06%2FGettyImages-968585794.jpg%3Fquality%3D90%26strip%3Dall%26crop%3D0%252C10.732984293194%252C100%252C78.534031413613%26w%3D1200 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fplatform.vox.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2025%2F06%2FGettyImages-968585794.jpg%3Fquality%3D90%26strip%3Dall%26crop%3D0%252C10.732984293194%252C100%252C78.534031413613%26w%3D1200 404w"/></picture></div><a href="https://www.vox.com/future-perfect/416398/ractopamine-pork-beef-elanco-animal-drug?utm_source=firefox-newtab-en-us" title="The One Drug RFK Jr. Should Actually Ban" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Vox</p><header class="title clamp">The One Drug RFK Jr. Should Actually Ban</header><p class="excerpt clamp">﻿The world’s “most controversial” food additive, explained.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;The One Drug RFK Jr. Should Actually Ban&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://www.parents.com/thmb/FGWdCLYRbVsR3-5AM4WTjssJwpA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/parentsdusting-b1d4325a075444b2bf388bb865a4defb.png" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fwww.parents.com%2Fthmb%2FFGWdCLYRbVsR3-5AM4WTjssJwpA%3D%2F1500x0%2Ffilters%3Ano_upscale()%3Amax_bytes(150000)%3Astrip_icc()%2Fparentsdusting-b1d4325a075444b2bf388bb865a4defb.png 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fwww.parents.com%2Fthmb%2FFGWdCLYRbVsR3-5AM4WTjssJwpA%3D%2F1500x0%2Ffilters%3Ano_upscale()%3Amax_bytes(150000)%3Astrip_icc()%2Fparentsdusting-b1d4325a075444b2bf388bb865a4defb.png 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fwww.parents.com%2Fthmb%2FFGWdCLYRbVsR3-5AM4WTjssJwpA%3D%2F1500x0%2Ffilters%3Ano_upscale()%3Amax_bytes(150000)%3Astrip_icc()%2Fparentsdusting-b1d4325a075444b2bf388bb865a4defb.png 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fwww.parents.com%2Fthmb%2FFGWdCLYRbVsR3-5AM4WTjssJwpA%3D%2F1500x0%2Ffilters%3Ano_upscale()%3Amax_bytes(150000)%3Astrip_icc()%2Fparentsdusting-b1d4325a075444b2bf388bb865a4defb.png 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fwww.parents.com%2Fthmb%2FFGWdCLYRbVsR3-5AM4WTjssJwpA%3D%2F1500x0%2Ffilters%3Ano_upscale()%3Amax_bytes(150000)%3Astrip_icc()%2Fparentsdusting-b1d4325a075444b2bf388bb865a4defb.png 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fwww.parents.com%2Fthmb%2FFGWdCLYRbVsR3-5AM4WTjssJwpA%3D%2F1500x0%2Ffilters%3Ano_upscale()%3Amax_bytes(150000)%3Astrip_icc()%2Fparentsdusting-b1d4325a075444b2bf388bb865a4defb.png 404w"/></picture></div><a href="https://www.parents.com/dusting-dangerous-new-trend-among-teens-what-parents-should-know-11752820?utm_source=firefox-newtab-en-us" title="‘Dusting’ Is a Dangerous New Trend Among Teens—Here’s What Parents Should Know" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Parents</p><header class="title clamp">‘Dusting’ Is a Dangerous New Trend Among Teens—Here’s What Parents Should Know</header><p class="excerpt clamp">The easy access and low cost of aerosol cans is what makes inhalant abuse attractive to teens. But experts say they need to know just how deadly this practice is.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;‘Dusting’ Is a Dangerous New Trend Among Teens—Here’s What Parents Should Know&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/83f3ba54-daba-4ea7-9e5a-0b3496b54bab.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F83f3ba54-daba-4ea7-9e5a-0b3496b54bab.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F83f3ba54-daba-4ea7-9e5a-0b3496b54bab.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F83f3ba54-daba-4ea7-9e5a-0b3496b54bab.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F83f3ba54-daba-4ea7-9e5a-0b3496b54bab.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F83f3ba54-daba-4ea7-9e5a-0b3496b54bab.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F83f3ba54-daba-4ea7-9e5a-0b3496b54bab.jpeg 404w"/></picture></div><a href="https://www.usatoday.com/story/entertainment/music/2025/06/16/nezza-dodgers-national-anthem-spanish/84225153007/?utm_source=firefox-newtab-en-us" title="Singer Nezza Performs National Anthem in Spanish at Dodgers Stadium After Team Axed It" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">USA TODAY</p><header class="title clamp">Singer Nezza Performs National Anthem in Spanish at Dodgers Stadium After Team Axed It</header><p class="excerpt clamp">Rising R&amp;B singer Nezza is going viral for her choice to sing the “Star Spangled Banner” in Spanish at a Los Angeles Dodgers baseball game, apparently despite the team’s request not to.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Singer Nezza Performs National Anthem in Spanish at Dodgers Stadium After Team Axed It&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s.zkcdn.net/Advertisers/d15d296bf8d4411ca3f239ce44d281e3.jpg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Fd15d296bf8d4411ca3f239ce44d281e3.jpg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Fd15d296bf8d4411ca3f239ce44d281e3.jpg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Fd15d296bf8d4411ca3f239ce44d281e3.jpg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Fd15d296bf8d4411ca3f239ce44d281e3.jpg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Fd15d296bf8d4411ca3f239ce44d281e3.jpg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Fd15d296bf8d4411ca3f239ce44d281e3.jpg 404w"/></picture></div><a href="https://i.geistm.com/l/HF_BTS_PKTDTS_LP?c=10FMPOCKET-001&amp;mealsize=3-2&amp;utm_source=pocket~geistm&amp;utm_medium=cpc&amp;utm_campaign=geist_pocket&amp;discount_comm_id=4a8baf67-7b32-4d03-86ad-53eafe280047&amp;utm_content=act_native_nonmetanative&amp;utm_term=GeistM_HF_PKT_DTS_Popdust_ABO_Purchase_1DC_PS_BAU25_A_All_RON_C22" title="HelloFresh: Get 10 Free Meals + Free Shipping on your First Box" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">hellofresh.com</p><header class="title clamp">HelloFresh: Get 10 Free Meals + Free Shipping on your First Box</header><p class="excerpt clamp">Use code 10FMPOCKET-001 for 10 Free HelloFresh Meals today</p></div><div class="story-footer"><p class="story-sponsored-label  clamp"><span data-l10n-args="{&quot;sponsor&quot;:&quot;HelloFresh&quot;}" data-l10n-id="newtab-label-sponsored-by"></span></p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;HelloFresh: Get 10 Free Meals + Free Shipping on your First Box&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/8d1b9aa5-bebf-4461-a367-da12a108aef3.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F8d1b9aa5-bebf-4461-a367-da12a108aef3.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F8d1b9aa5-bebf-4461-a367-da12a108aef3.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F8d1b9aa5-bebf-4461-a367-da12a108aef3.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F8d1b9aa5-bebf-4461-a367-da12a108aef3.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F8d1b9aa5-bebf-4461-a367-da12a108aef3.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F8d1b9aa5-bebf-4461-a367-da12a108aef3.jpeg 404w"/></picture></div><a href="https://apnews.com/article/louvre-museum-paris-closed-lines-delay-2bbf9be4f49de739fd14dd4d908e4d72?utm_source=firefox-newtab-en-us" title="Overwhelmed and Understaffed, the Louvre Shuts Its Doors — a Warning Sign for Global Overtourism" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">The Associated Press</p><header class="title clamp">Overwhelmed and Understaffed, the Louvre Shuts Its Doors — a Warning Sign for Global Overtourism</header><p class="excerpt clamp">The Louvre Museum has failed to open on time Monday, leaving thousands of visitors stuck in long, unmoving lines.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Overwhelmed and Understaffed, the Louvre Shuts Its Doors — a Warning Sign for Global Overtourism&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s.zkcdn.net/Advertisers/a70b9b0b08db416285babd0c9b4550cb.jpg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Fa70b9b0b08db416285babd0c9b4550cb.jpg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Fa70b9b0b08db416285babd0c9b4550cb.jpg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Fa70b9b0b08db416285babd0c9b4550cb.jpg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Fa70b9b0b08db416285babd0c9b4550cb.jpg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Fa70b9b0b08db416285babd0c9b4550cb.jpg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Fa70b9b0b08db416285babd0c9b4550cb.jpg 404w"/></picture></div><a href="https://partners.thepennyhoarder.com/1000-checking-ff-prt/?aff_id=342&amp;utm_source=firefox&amp;utm_medium=paidnative&amp;aff_sub3=1000-checking-money-roll" title="Have More Than $1,000? Here Is How You Can Turn That to $10K" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">thepennyhoarder.com</p><header class="title clamp">Have More Than $1,000? Here Is How You Can Turn That to $10K</header><p class="excerpt clamp">Money made easy.</p></div><div class="story-footer"><p class="story-sponsored-label  clamp"><span data-l10n-args="{&quot;sponsor&quot;:&quot;The Penny Hoarder&quot;}" data-l10n-id="newtab-label-sponsored-by"></span></p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Have More Than $1,000? Here Is How You Can Turn That to $10K&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/ae3a534f-80ec-4d83-a8fb-bb11a48639e1.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fae3a534f-80ec-4d83-a8fb-bb11a48639e1.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fae3a534f-80ec-4d83-a8fb-bb11a48639e1.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fae3a534f-80ec-4d83-a8fb-bb11a48639e1.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fae3a534f-80ec-4d83-a8fb-bb11a48639e1.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fae3a534f-80ec-4d83-a8fb-bb11a48639e1.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fae3a534f-80ec-4d83-a8fb-bb11a48639e1.jpeg 404w"/></picture></div><a href="https://getpocket.com/explore/item/what-happens-when-you-ve-been-on-ozempic-for-20-years?utm_source=firefox-newtab-en-us" title="What Happens When You’ve Been on Ozempic for 20 Years?" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">The Atlantic</p><header class="title clamp">What Happens When You’ve Been on Ozempic for 20 Years?</header><p class="excerpt clamp">The long-term effects of GLP-1 drugs are unknown.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;What Happens When You’ve Been on Ozempic for 20 Years?&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2025-06/250613-omaha-ice-raid-glenn-valley-foods-social-se-1150p-ac2e38.jpg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia-cldnry.s-nbcnews.com%2Fimage%2Fupload%2Ft_nbcnews-fp-1200-630%2Cf_auto%2Cq_auto%3Abest%2Frockcms%2F2025-06%2F250613-omaha-ice-raid-glenn-valley-foods-social-se-1150p-ac2e38.jpg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia-cldnry.s-nbcnews.com%2Fimage%2Fupload%2Ft_nbcnews-fp-1200-630%2Cf_auto%2Cq_auto%3Abest%2Frockcms%2F2025-06%2F250613-omaha-ice-raid-glenn-valley-foods-social-se-1150p-ac2e38.jpg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia-cldnry.s-nbcnews.com%2Fimage%2Fupload%2Ft_nbcnews-fp-1200-630%2Cf_auto%2Cq_auto%3Abest%2Frockcms%2F2025-06%2F250613-omaha-ice-raid-glenn-valley-foods-social-se-1150p-ac2e38.jpg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia-cldnry.s-nbcnews.com%2Fimage%2Fupload%2Ft_nbcnews-fp-1200-630%2Cf_auto%2Cq_auto%3Abest%2Frockcms%2F2025-06%2F250613-omaha-ice-raid-glenn-valley-foods-social-se-1150p-ac2e38.jpg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia-cldnry.s-nbcnews.com%2Fimage%2Fupload%2Ft_nbcnews-fp-1200-630%2Cf_auto%2Cq_auto%3Abest%2Frockcms%2F2025-06%2F250613-omaha-ice-raid-glenn-valley-foods-social-se-1150p-ac2e38.jpg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia-cldnry.s-nbcnews.com%2Fimage%2Fupload%2Ft_nbcnews-fp-1200-630%2Cf_auto%2Cq_auto%3Abest%2Frockcms%2F2025-06%2F250613-omaha-ice-raid-glenn-valley-foods-social-se-1150p-ac2e38.jpg 404w"/></picture></div><a href="https://www.nbcnews.com/news/us-news/omaha-immigration-workplace-raid-aftermath-rcna212931?utm_source=firefox-newtab-en-us" title="How a City in Nebraska Is Recovering After the State’s Largest Worksite Immigration Raid" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">NBC News</p><header class="title clamp">How a City in Nebraska Is Recovering After the State’s Largest Worksite Immigration Raid</header><p class="excerpt clamp">The city of Omaha is trying to forge ahead following the raid’s chilling effect on the local workforce and the community at large.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;How a City in Nebraska Is Recovering After the State’s Largest Worksite Immigration Raid&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://www.404media.co/content/images/size/w1200/2025/06/Untitled.png" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fwww.404media.co%2Fcontent%2Fimages%2Fsize%2Fw1200%2F2025%2F06%2FUntitled.png 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fwww.404media.co%2Fcontent%2Fimages%2Fsize%2Fw1200%2F2025%2F06%2FUntitled.png 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fwww.404media.co%2Fcontent%2Fimages%2Fsize%2Fw1200%2F2025%2F06%2FUntitled.png 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fwww.404media.co%2Fcontent%2Fimages%2Fsize%2Fw1200%2F2025%2F06%2FUntitled.png 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fwww.404media.co%2Fcontent%2Fimages%2Fsize%2Fw1200%2F2025%2F06%2FUntitled.png 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fwww.404media.co%2Fcontent%2Fimages%2Fsize%2Fw1200%2F2025%2F06%2FUntitled.png 404w"/></picture></div><a href="https://www.404media.co/humans-have-now-seen-the-dawn-of-time-from-earth-after-breakthrough/?utm_source=firefox-newtab-en-us" title="Humans Have Now Seen the Dawn of Time From Earth After Breakthrough" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">404 Media</p><header class="title clamp">Humans Have Now Seen the Dawn of Time From Earth After Breakthrough</header><p class="excerpt clamp">Telescopes perched on the Andes Mountains glimpsed elusive encounters fueled by the first of the first stars in the universe more than 13 billion years ago.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Humans Have Now Seen the Dawn of Time From Earth After Breakthrough&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s.zkcdn.net/Advertisers/8ad0b368de7d4e04ab9fee2923f886fd.jpg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F8ad0b368de7d4e04ab9fee2923f886fd.jpg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F8ad0b368de7d4e04ab9fee2923f886fd.jpg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F8ad0b368de7d4e04ab9fee2923f886fd.jpg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F8ad0b368de7d4e04ab9fee2923f886fd.jpg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F8ad0b368de7d4e04ab9fee2923f886fd.jpg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F8ad0b368de7d4e04ab9fee2923f886fd.jpg 404w"/></picture></div><a href="https://i.geistm.com/l/FJ_BAU_PKTDTS_LP?c=50GEIST-023&amp;mealsize=1-8&amp;discount_comm_id=7267f20b-a39f-4440-9ca2-1404329a2b84&amp;utm_source=pocket~geistm&amp;utm_medium=cpc&amp;utm_campaign=geistm~pocket&amp;vs_campaign_id=7d2433f7-209e-4aac-b3fe-b63e2caf53e0&amp;utm_content=act_native_nonmetanative&amp;utm_term=GeistM_FJ_PKT_DTS_Popdust_ABO_Purchase_1DC_PS_Evergreen_A_All_RON_PostItNote2" title="Click Here For 50% Off Your First Box and 20% off Your Next Month" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">factor75.com</p><header class="title clamp">Click Here For 50% Off Your First Box and 20% off Your Next Month</header><p class="excerpt clamp">Use code 50GEIST-023 for 50% Factor today</p></div><div class="story-footer"><p class="story-sponsored-label  clamp"><span data-l10n-args="{&quot;sponsor&quot;:&quot;Factor&quot;}" data-l10n-id="newtab-label-sponsored-by"></span></p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Click Here For 50% Off Your First Box and 20% off Your Next Month&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://hips.hearstapps.com/hmg-prod/images/scuba-diver-observing-a-large-shipwreck-completely-royalty-free-image-1749676425.pjpeg?crop=1xw:0.75035xh;center,top&amp;resize=1200:*" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fhips.hearstapps.com%2Fhmg-prod%2Fimages%2Fscuba-diver-observing-a-large-shipwreck-completely-royalty-free-image-1749676425.pjpeg%3Fcrop%3D1xw%3A0.75035xh%3Bcenter%2Ctop%26resize%3D1200%3A* 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fhips.hearstapps.com%2Fhmg-prod%2Fimages%2Fscuba-diver-observing-a-large-shipwreck-completely-royalty-free-image-1749676425.pjpeg%3Fcrop%3D1xw%3A0.75035xh%3Bcenter%2Ctop%26resize%3D1200%3A* 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fhips.hearstapps.com%2Fhmg-prod%2Fimages%2Fscuba-diver-observing-a-large-shipwreck-completely-royalty-free-image-1749676425.pjpeg%3Fcrop%3D1xw%3A0.75035xh%3Bcenter%2Ctop%26resize%3D1200%3A* 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fhips.hearstapps.com%2Fhmg-prod%2Fimages%2Fscuba-diver-observing-a-large-shipwreck-completely-royalty-free-image-1749676425.pjpeg%3Fcrop%3D1xw%3A0.75035xh%3Bcenter%2Ctop%26resize%3D1200%3A* 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fhips.hearstapps.com%2Fhmg-prod%2Fimages%2Fscuba-diver-observing-a-large-shipwreck-completely-royalty-free-image-1749676425.pjpeg%3Fcrop%3D1xw%3A0.75035xh%3Bcenter%2Ctop%26resize%3D1200%3A* 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fhips.hearstapps.com%2Fhmg-prod%2Fimages%2Fscuba-diver-observing-a-large-shipwreck-completely-royalty-free-image-1749676425.pjpeg%3Fcrop%3D1xw%3A0.75035xh%3Bcenter%2Ctop%26resize%3D1200%3A* 404w"/></picture></div><a href="https://www.popularmechanics.com/science/archaeology/a65025285/holy-grail-of-shipwrecks/?utm_source=firefox-newtab-en-us" title="The ‘Holy Grail of Shipwrecks’ Is Still Underwater. So Is Its $17 Billion Fortune." class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Popular Mechanics</p><header class="title clamp">The ‘Holy Grail of Shipwrecks’ Is Still Underwater. So Is Its $17 Billion Fortune.</header><p class="excerpt clamp">That’s a lot of lost loot.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;The ‘Holy Grail of Shipwrecks’ Is Still Underwater. So Is Its $17 Billion Fortune.&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/8f20ef1b-14ea-4a30-9b5d-f9ee4e0121f2.png" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F8f20ef1b-14ea-4a30-9b5d-f9ee4e0121f2.png 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F8f20ef1b-14ea-4a30-9b5d-f9ee4e0121f2.png 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F8f20ef1b-14ea-4a30-9b5d-f9ee4e0121f2.png 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F8f20ef1b-14ea-4a30-9b5d-f9ee4e0121f2.png 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F8f20ef1b-14ea-4a30-9b5d-f9ee4e0121f2.png 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F8f20ef1b-14ea-4a30-9b5d-f9ee4e0121f2.png 404w"/></picture></div><a href="https://www.mprnews.org/story/2025/06/15/manhunt-vance-boelter-suspect-shootings-minnesota-lawmakers-melissa-hortman-john-hoffman?utm_source=firefox-newtab-en-us" title="Vance Boelter Captured, Charged in Shootings of Minnesota Lawmakers" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">MPR News</p><header class="title clamp">Vance Boelter Captured, Charged in Shootings of Minnesota Lawmakers</header><p class="excerpt clamp">Authorities Sunday arrested 57-year-old Vance Boelter following the largest manhunt in state history.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Vance Boelter Captured, Charged in Shootings of Minnesota Lawmakers&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://assets1.cbsnewsstatic.com/hub/i/r/2025/04/23/8fdc7ed4-0241-4309-8663-38f9651e30bd/thumbnail/1200x630/3967826f7bbc62cc5886404444a04cc3/gettyimages-2152300156.jpg?v=d2f497bd9339ad99d2e0559414346698" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fassets1.cbsnewsstatic.com%2Fhub%2Fi%2Fr%2F2025%2F04%2F23%2F8fdc7ed4-0241-4309-8663-38f9651e30bd%2Fthumbnail%2F1200x630%2F3967826f7bbc62cc5886404444a04cc3%2Fgettyimages-2152300156.jpg%3Fv%3Dd2f497bd9339ad99d2e0559414346698 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fassets1.cbsnewsstatic.com%2Fhub%2Fi%2Fr%2F2025%2F04%2F23%2F8fdc7ed4-0241-4309-8663-38f9651e30bd%2Fthumbnail%2F1200x630%2F3967826f7bbc62cc5886404444a04cc3%2Fgettyimages-2152300156.jpg%3Fv%3Dd2f497bd9339ad99d2e0559414346698 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fassets1.cbsnewsstatic.com%2Fhub%2Fi%2Fr%2F2025%2F04%2F23%2F8fdc7ed4-0241-4309-8663-38f9651e30bd%2Fthumbnail%2F1200x630%2F3967826f7bbc62cc5886404444a04cc3%2Fgettyimages-2152300156.jpg%3Fv%3Dd2f497bd9339ad99d2e0559414346698 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fassets1.cbsnewsstatic.com%2Fhub%2Fi%2Fr%2F2025%2F04%2F23%2F8fdc7ed4-0241-4309-8663-38f9651e30bd%2Fthumbnail%2F1200x630%2F3967826f7bbc62cc5886404444a04cc3%2Fgettyimages-2152300156.jpg%3Fv%3Dd2f497bd9339ad99d2e0559414346698 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fassets1.cbsnewsstatic.com%2Fhub%2Fi%2Fr%2F2025%2F04%2F23%2F8fdc7ed4-0241-4309-8663-38f9651e30bd%2Fthumbnail%2F1200x630%2F3967826f7bbc62cc5886404444a04cc3%2Fgettyimages-2152300156.jpg%3Fv%3Dd2f497bd9339ad99d2e0559414346698 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fassets1.cbsnewsstatic.com%2Fhub%2Fi%2Fr%2F2025%2F04%2F23%2F8fdc7ed4-0241-4309-8663-38f9651e30bd%2Fthumbnail%2F1200x630%2F3967826f7bbc62cc5886404444a04cc3%2Fgettyimages-2152300156.jpg%3Fv%3Dd2f497bd9339ad99d2e0559414346698 404w"/></picture></div><a href="https://www.cbsnews.com/news/cdc-urges-summer-camps-to-check-for-measles-immunity-as-u-s-nears-record/?utm_source=firefox-newtab-en-us" title="CDC Urges Summer Camps to Check for Measles Immunity, As U.S. Nears Record" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">CBS News</p><header class="title clamp">CDC Urges Summer Camps to Check for Measles Immunity, As U.S. Nears Record</header><p class="excerpt clamp">The CDC’s new “checklist” comes amid a deadly year of measles outbreaks that is now near record levels.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;CDC Urges Summer Camps to Check for Measles Immunity, As U.S. Nears Record&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://mirrorball.themarshallproject.org/t9t3yJDUZMF5FlUTfQcqZe0G70RKbCj6OAnorRQxnpc/w:1200/aHR0cHM6Ly9kMm0x/OXBtdnRzNWJvYi5j/bG91ZGZyb250Lm5l/dC9jYWNoZS84ZDR2/b2VtNzZuMDY0YWhv/dmdmODRkamRkMTls/LzI1MDYxM19HZXR0/eV9DQUVTU0FZMDYx/NF9zb2NpYWwuanBn" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmirrorball.themarshallproject.org%2Ft9t3yJDUZMF5FlUTfQcqZe0G70RKbCj6OAnorRQxnpc%2Fw%3A1200%2FaHR0cHM6Ly9kMm0x%2FOXBtdnRzNWJvYi5j%2FbG91ZGZyb250Lm5l%2FdC9jYWNoZS84ZDR2%2Fb2VtNzZuMDY0YWhv%2FdmdmODRkamRkMTls%2FLzI1MDYxM19HZXR0%2FeV9DQUVTU0FZMDYx%2FNF9zb2NpYWwuanBn 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmirrorball.themarshallproject.org%2Ft9t3yJDUZMF5FlUTfQcqZe0G70RKbCj6OAnorRQxnpc%2Fw%3A1200%2FaHR0cHM6Ly9kMm0x%2FOXBtdnRzNWJvYi5j%2FbG91ZGZyb250Lm5l%2FdC9jYWNoZS84ZDR2%2Fb2VtNzZuMDY0YWhv%2FdmdmODRkamRkMTls%2FLzI1MDYxM19HZXR0%2FeV9DQUVTU0FZMDYx%2FNF9zb2NpYWwuanBn 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmirrorball.themarshallproject.org%2Ft9t3yJDUZMF5FlUTfQcqZe0G70RKbCj6OAnorRQxnpc%2Fw%3A1200%2FaHR0cHM6Ly9kMm0x%2FOXBtdnRzNWJvYi5j%2FbG91ZGZyb250Lm5l%2FdC9jYWNoZS84ZDR2%2Fb2VtNzZuMDY0YWhv%2FdmdmODRkamRkMTls%2FLzI1MDYxM19HZXR0%2FeV9DQUVTU0FZMDYx%2FNF9zb2NpYWwuanBn 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmirrorball.themarshallproject.org%2Ft9t3yJDUZMF5FlUTfQcqZe0G70RKbCj6OAnorRQxnpc%2Fw%3A1200%2FaHR0cHM6Ly9kMm0x%2FOXBtdnRzNWJvYi5j%2FbG91ZGZyb250Lm5l%2FdC9jYWNoZS84ZDR2%2Fb2VtNzZuMDY0YWhv%2FdmdmODRkamRkMTls%2FLzI1MDYxM19HZXR0%2FeV9DQUVTU0FZMDYx%2FNF9zb2NpYWwuanBn 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmirrorball.themarshallproject.org%2Ft9t3yJDUZMF5FlUTfQcqZe0G70RKbCj6OAnorRQxnpc%2Fw%3A1200%2FaHR0cHM6Ly9kMm0x%2FOXBtdnRzNWJvYi5j%2FbG91ZGZyb250Lm5l%2FdC9jYWNoZS84ZDR2%2Fb2VtNzZuMDY0YWhv%2FdmdmODRkamRkMTls%2FLzI1MDYxM19HZXR0%2FeV9DQUVTU0FZMDYx%2FNF9zb2NpYWwuanBn 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmirrorball.themarshallproject.org%2Ft9t3yJDUZMF5FlUTfQcqZe0G70RKbCj6OAnorRQxnpc%2Fw%3A1200%2FaHR0cHM6Ly9kMm0x%2FOXBtdnRzNWJvYi5j%2FbG91ZGZyb250Lm5l%2FdC9jYWNoZS84ZDR2%2Fb2VtNzZuMDY0YWhv%2FdmdmODRkamRkMTls%2FLzI1MDYxM19HZXR0%2FeV9DQUVTU0FZMDYx%2FNF9zb2NpYWwuanBn 404w"/></picture></div><a href="https://www.themarshallproject.org/2025/06/14/ice-immigration-dhs-deportation-facts?utm_source=firefox-newtab-en-us" title="The Feds Are Offering Migrants Cash to Self-Deport. Lawyers Call These Incentives Misleading." class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">The Marshall Project</p><header class="title clamp">The Feds Are Offering Migrants Cash to Self-Deport. Lawyers Call These Incentives Misleading.</header><p class="excerpt clamp">The government’s offer to pay a stipend, waive fees, and let people return legally to the U.S. go against current law and court practices, immigration lawyers say.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;The Feds Are Offering Migrants Cash to Self-Deport. Lawyers Call These Incentives Misleading.&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/09c8d868-d036-484a-ae2a-57f69a79e4cb.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F09c8d868-d036-484a-ae2a-57f69a79e4cb.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F09c8d868-d036-484a-ae2a-57f69a79e4cb.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F09c8d868-d036-484a-ae2a-57f69a79e4cb.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F09c8d868-d036-484a-ae2a-57f69a79e4cb.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F09c8d868-d036-484a-ae2a-57f69a79e4cb.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F09c8d868-d036-484a-ae2a-57f69a79e4cb.jpeg 404w"/></picture></div><a href="https://getpocket.com/explore/item/4-new-year-tidying-dos-and-don-ts-straight-from-a-professional-organizer?utm_source=firefox-newtab-en-us" title="4 Tidying Dos and Don’ts, Straight From a Professional Organizer" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Domino</p><header class="title clamp">4 Tidying Dos and Don’ts, Straight From a Professional Organizer</header><p class="excerpt clamp">Are you maximizing your doors?</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;4 Tidying Dos and Don’ts, Straight From a Professional Organizer&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://th-thumbnailer.cdn-si-edu.com/46BTGwOlSqZR0VvVEV2XQbp0NGU=/fit-in/1200x0/filters:focal(1431x662:1432x663)/https%3A%2F%2Ftf-cmsv2-smithsonianmag-media.s3.amazonaws.com%2Ffiler_public%2Ff6%2F5f%2Ff65f235b-bf7c-461b-94c4-f83703a4687a%2Fgettyimages-501686984.jpg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fth-thumbnailer.cdn-si-edu.com%2F46BTGwOlSqZR0VvVEV2XQbp0NGU%3D%2Ffit-in%2F1200x0%2Ffilters%3Afocal(1431x662%3A1432x663)%2Fhttps%253A%252F%252Ftf-cmsv2-smithsonianmag-media.s3.amazonaws.com%252Ffiler_public%252Ff6%252F5f%252Ff65f235b-bf7c-461b-94c4-f83703a4687a%252Fgettyimages-501686984.jpg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fth-thumbnailer.cdn-si-edu.com%2F46BTGwOlSqZR0VvVEV2XQbp0NGU%3D%2Ffit-in%2F1200x0%2Ffilters%3Afocal(1431x662%3A1432x663)%2Fhttps%253A%252F%252Ftf-cmsv2-smithsonianmag-media.s3.amazonaws.com%252Ffiler_public%252Ff6%252F5f%252Ff65f235b-bf7c-461b-94c4-f83703a4687a%252Fgettyimages-501686984.jpg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fth-thumbnailer.cdn-si-edu.com%2F46BTGwOlSqZR0VvVEV2XQbp0NGU%3D%2Ffit-in%2F1200x0%2Ffilters%3Afocal(1431x662%3A1432x663)%2Fhttps%253A%252F%252Ftf-cmsv2-smithsonianmag-media.s3.amazonaws.com%252Ffiler_public%252Ff6%252F5f%252Ff65f235b-bf7c-461b-94c4-f83703a4687a%252Fgettyimages-501686984.jpg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fth-thumbnailer.cdn-si-edu.com%2F46BTGwOlSqZR0VvVEV2XQbp0NGU%3D%2Ffit-in%2F1200x0%2Ffilters%3Afocal(1431x662%3A1432x663)%2Fhttps%253A%252F%252Ftf-cmsv2-smithsonianmag-media.s3.amazonaws.com%252Ffiler_public%252Ff6%252F5f%252Ff65f235b-bf7c-461b-94c4-f83703a4687a%252Fgettyimages-501686984.jpg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fth-thumbnailer.cdn-si-edu.com%2F46BTGwOlSqZR0VvVEV2XQbp0NGU%3D%2Ffit-in%2F1200x0%2Ffilters%3Afocal(1431x662%3A1432x663)%2Fhttps%253A%252F%252Ftf-cmsv2-smithsonianmag-media.s3.amazonaws.com%252Ffiler_public%252Ff6%252F5f%252Ff65f235b-bf7c-461b-94c4-f83703a4687a%252Fgettyimages-501686984.jpg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fth-thumbnailer.cdn-si-edu.com%2F46BTGwOlSqZR0VvVEV2XQbp0NGU%3D%2Ffit-in%2F1200x0%2Ffilters%3Afocal(1431x662%3A1432x663)%2Fhttps%253A%252F%252Ftf-cmsv2-smithsonianmag-media.s3.amazonaws.com%252Ffiler_public%252Ff6%252F5f%252Ff65f235b-bf7c-461b-94c4-f83703a4687a%252Fgettyimages-501686984.jpg 404w"/></picture></div><a href="https://www.smithsonianmag.com/smart-news/tutankhamuns-iconic-gold-death-mask-is-getting-a-new-home-180986801/?utm_source=firefox-newtab-en-us" title="Tutankhamun’s Iconic Gold Death Mask Is Getting a New Home Near the Pyramids of Giza" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Smithsonian Magazine</p><header class="title clamp">Tutankhamun’s Iconic Gold Death Mask Is Getting a New Home Near the Pyramids of Giza</header><p class="excerpt clamp">Soon, the elaborately decorated artifact will be transferred to the brand new Grand Egyptian Museum, joining more than 5,000 other items from the boy king’s tomb.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Tutankhamun’s Iconic Gold Death Mask Is Getting a New Home Near the Pyramids of Giza&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s.zkcdn.net/Advertisers/603a8b0e962f4dc8be2da4135f603321.jpg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F603a8b0e962f4dc8be2da4135f603321.jpg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F603a8b0e962f4dc8be2da4135f603321.jpg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F603a8b0e962f4dc8be2da4135f603321.jpg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F603a8b0e962f4dc8be2da4135f603321.jpg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F603a8b0e962f4dc8be2da4135f603321.jpg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F603a8b0e962f4dc8be2da4135f603321.jpg 404w"/></picture></div><a href="https://insights.smartasset.com/fahappiness?utm_source=pocket&amp;utm_campaign=poc__falc_content_fahappiness&amp;utm_content=fahappiness_grey" title="Study: People With Much Saved Feel Happiest" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">smartasset.com</p><header class="title clamp">Study: People With Much Saved Feel Happiest</header></div><div class="story-footer"><p class="story-sponsored-label  clamp"><span data-l10n-args="{&quot;sponsor&quot;:&quot;SmartAsset&quot;}" data-l10n-id="newtab-label-sponsored-by"></span></p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Study: People With Much Saved Feel Happiest&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.amazonaws.com/pocket-curatedcorpusapi-prod-images/2a214248-e666-48e4-ad6d-881ec7b97aa1.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F2a214248-e666-48e4-ad6d-881ec7b97aa1.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F2a214248-e666-48e4-ad6d-881ec7b97aa1.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F2a214248-e666-48e4-ad6d-881ec7b97aa1.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F2a214248-e666-48e4-ad6d-881ec7b97aa1.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F2a214248-e666-48e4-ad6d-881ec7b97aa1.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F2a214248-e666-48e4-ad6d-881ec7b97aa1.jpeg 404w"/></picture></div><a href="https://getpocket.com/explore/item/the-rise-of-the-recliner-as-a-male-social-space?utm_source=firefox-newtab-en-us" title="The Rise of the Recliner as a Male Social Space" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Scientific American</p><header class="title clamp">The Rise of the Recliner as a Male Social Space</header><p class="excerpt clamp">The gendering of spaces changed the way people could relax in their homes.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;The Rise of the Recliner as a Male Social Space&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s.zkcdn.net/Advertisers/8927bbfae6b74291869aa48b37c71a59.png" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F8927bbfae6b74291869aa48b37c71a59.png 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F8927bbfae6b74291869aa48b37c71a59.png 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F8927bbfae6b74291869aa48b37c71a59.png 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F8927bbfae6b74291869aa48b37c71a59.png 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F8927bbfae6b74291869aa48b37c71a59.png 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F8927bbfae6b74291869aa48b37c71a59.png 404w"/></picture></div><a href="https://www.energybillcruncher.com/pa/?tg_ref=dec24&amp;camp_id=ME_flag2&amp;keyword=30k&amp;sub2=iypao99mpaoahrd" title="Maine: Gov. Will Give You Back Up To $30,000 Credit To Install Solar In These Zip Codes" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">energybillcruncher.com</p><header class="title clamp">Maine: Gov. Will Give You Back Up To $30,000 Credit To Install Solar In These Zip Codes</header><p class="excerpt clamp">If you pay over $99/month for electricity &amp; own your home, you&#x27;ll probably qualify for this.</p></div><div class="story-footer"><p class="story-sponsored-label  clamp"><span data-l10n-args="{&quot;sponsor&quot;:&quot;EnergyBillCruncher&quot;}" data-l10n-id="newtab-label-sponsored-by"></span></p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Maine: Gov. Will Give You Back Up To $30,000 Credit To Install Solar In These Zip Codes&quot;}" class="context-menu-button icon"></button></div></div></div></article></div></div></div><div><div class="ds-navigation ds-navigation-left-align "><span class="ds-navigation-header" data-l10n-id="newtab-pocket-read-more"></span><ul><li><a href="https://getpocket.com/explore/self-improvement?utm_source=pocket-newtab">Self improvement</a></li><li><a href="https://getpocket.com/explore/food?utm_source=pocket-newtab">Food</a></li><li><a href="https://getpocket.com/explore/entertainment?utm_source=pocket-newtab">Entertainment</a></li><li><a href="https://getpocket.com/explore/health?utm_source=pocket-newtab">Health &amp; fitness</a></li><li><a href="https://getpocket.com/explore/science?utm_source=pocket-newtab">Science</a></li><li><a href="https://getpocket.com/explore?utm_source=pocket-newtab">More recommendations ›</a></li></ul><a href="https://www.mozilla.org/privacy/firefox/#recommend-relevant-content" class="ds-navigation-privacy"><span data-l10n-id="newtab-section-menu-privacy-notice"></span></a></div></div></div></div><style data-styles="[[null,{&quot;.ds-navigation&quot;:&quot;margin-top: -10px;&quot;}]]"></style></div></div></section><div class="discovery-stream ds-layout"><div class="ds-column ds-column-12"><div class="ds-column-grid"><div></div></div></div><style data-styles="[[null]]"></style></div></div></main><aside></aside></div></div>
+    </div>
+    <div id="footer-asrouter-container" role="presentation"></div>
+    <script src="about:home?jscache"></script>
+    <script async type="module" src="chrome://global/content/elements/moz-toggle.mjs"></script>
+  </body>
+</html>
+window.__FROM_STARTUP_CACHE__ = true;
+window.__STARTUP_STATE__ = {
+	"TopSites": {
+		"initialized": true,
+		"rows": [
+			{
+				"isDefault": true,
+				"url": "https://www.amazon.com/?tag=admarketus-20&ref=pd_sl_21a89719c55232eaed9b870d40a60e8e9e4940c1958f1ec5329b5a96&mfadid=adm",
+				"hostname": "amazon",
+				"sendAttributionRequest": false,
+				"label": "Amazon",
+				"show_sponsored_label": true,
+				"sponsored_position": 1,
+				"sponsored_click_url": "https://bridge.ric1.admarketplace.net/ctp?version=1.0.0&encp=jnEYxmwVJQkX5QbUftINI%3DwqgClnxGEkgClr4CbW1CxWfCDZfCbnHnwqI%3DEYD%3DcYHFdZgF49DnIQfRNnCFv%3DilzliZ44E%3DXSCw3EsDdPBnXIEdIoCdj74l_P2nu13l7%2FCnvtJlz9ECEiEcldCq3tiqdDiZcg3dwaFwj4fDdPBCEIiwI%2FCd3I7ReOgClWftaW7REkiCkY7RERiCkY7ndZj9eKiF3agCbnirjvIpkZ4CxafZLk4CqnxGEwxRwvIpkX1CfW4QfWfZLkfZxWfZHWfZ8nJG4kjpkW7R7kHnWzIncTxmDnx93kiF2zftIqx%3D4vIpkW7ncWfZd4DZeaCc37jldCf9N1sqdkCEfWslzpf9NfElEkCcH_IqzDEC44iqDZCGvtIOIQj9wvIpkY7n4YIFwqgCLZfplnx%3DXvIpkXfpbr7n3Zx%3D7vIpkXfpl_7n3Zx%3DcqjnwqgClWfClnI94WHGEqjnwqgCHafQlnI94WiFzvIpkX4pHm7ncqxmXvIpkX1CfW4QfWfZLk4pqmfZlk4QlnxmXVj%3D_dJCkX7R7kJrfz6QTS1Y%2FM6OIviFfz5ClM5ClM5ClM5ClM5ClnIF_EDqWzClNefmIFE%3DLaEZIUxDuFC94wCwckflutEqIFfR3FsQEG3mjU3DEWfl_rBrvg7C7t3lD_id3Ns9IojCcOfQ4qBkc_En_2HGvUsRI9sw4D1FIPfw4%3DDmcmFFXaxqX9BCwCFQ7GiclrD9bm3cHmsCIiFG4i4c45BwIZicN1jZ44i%3DXwBQjvCQNo2QjE7C7tiR3P3p7mFRLrIDEDfqEtsEIe7C7t4Dc4FDdt3%3D4O3cegECDaCD_uDFj6Dl7d2Gxwfk2wfk2nHrbzftaZfQbW5pbTfCbX4tWW5pbTfCbW4YWT5tWTj%3DwTIG4W5%3D7NHmuniFXTGm4VJn3dHmwmI2yy",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkX1CfW4QfWfZLkfZxWfZHWfZ8nj9wWIBdvIpkY7n4YIFckiGIw5FwqgCLZfplnx%3DXNHmEuIF%2Bk5FwqgClWfpxnHF2uxmETIF4kiFzU5FwqgCl%2BfZbmfZbZ1p2k1CHZfC2mfBIZJ%3Dzk5F%2BdJF7wxQkX",
+				"sponsored_tile_id": 74301,
+				"partner": "amp",
+				"favicon": "https://ads-img.mozilla.org/v1/images?image_data=CjoKOGh0dHBzOi8vYW1wLWFzc2V0LjQ1dHUxYzAuY29tL2Fzc2V0cy8xMDExLzE2MDI1MTczODUuanBnEiCPWEpTJukrjsNjZdZ-ENKI3O38x6nmTcNlFXn6RNaaQQ",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://expedia.prf.hn/l/jXpJ1VQ/pubref:193063038437036032?mfadid=adm",
+				"hostname": "expedia.prf",
+				"sendAttributionRequest": false,
+				"label": "Expedia",
+				"show_sponsored_label": true,
+				"sponsored_position": 2,
+				"sponsored_click_url": "https://bridge.ric1.admarketplace.net/ctp?version=1.0.0&encp=jnEYxmwVJQkX5QbUftINI%3DwqgC8nxGEkgClr4CbW1CxWfCDZfCbnHnwqI%3DEYD%3DcYHFdZgDdDirv43cwPCD344l_lCC443lkYCD34sBIWHQkXfpbUftIdj%3DqzfOIdImqzfOIuxr3WGmwqspkW7nuriF2zfZDa1pLmfplk7RcdIG7_iF2zfCqZfpHZfpfa4pfrfpfmfpfY7ndZj92zftIYj%3D7TgFINJ94w7Rekj%3DwqgCbnI9eQiF2zftIQj9wvIpkY7n4YIFwqgClW4px_7ReTiF2zfCbW4YIqxreOiF2zfC2rfYIqxreNI9IvIpkX4pfY7n3Zx%3DcdI9IvIpkafZlW7n3Zx%3DwViF2zfCfm4BINI94TiF2zfCqZfpHZfpfa4p2_4QfX4Z2r7R4TJr3UjFkzfOIYj%3DzZgB%2FM6QTS1Y%2FniFwQgBkX1YkX1YkX1YkX1YkX7nEUEE7fgDX82C4nEw3%2F1cxmJkvlBYDY3QH_JmzGjG4BiRvR2Z4UFFX4FQcE1GI2IdcICR4mDd4t4d3V2qkwfqIm4k_B3ce4BDvtikjpfd%2FYHm3pFww54EqmJRNUHwcosGItEcj%2Fir8k7C7%3Dj9vm3ZDZCnED1Dzf3n7wCl_Sx%3DNW3mxwfk2wfk2nHrbzfBak4pbW5pbTfQqYfOWW5pbTfCbW4YWT5tWTj%3DwTIG4W5%3D7NHmuniFXTGm4VJn3dHmwmI2yy",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkX1CfW4QfWfZLkfZxWfZHWfZ8nj9wWIBdvIpkY7n4YIFckiGIw5FwqgClW4px%2B7ReTHF4wJFEUjtdvIpkXfpbr7ncq5G4wJ%3DEQj%3DwVJOdvIpkX1CfW4QfWfZLk4pqmfZlr4pxnxmXVjtdUjFdOIG8zfLyy",
+				"sponsored_tile_id": 75171,
+				"partner": "amp",
+				"favicon": "https://ads-img.mozilla.org/v1/images?image_data=CnAKbmh0dHBzOi8vYW1wLWFzc2V0LjQ1dHUxYzAuY29tL2Fzc2V0cy8xNDMyL2ZkNWJjODZjYjRjODg1MDgyZTY2ZGY4NzdlYjQ0OTRjZWIyYzY2ZDc2ODVlMzdhODIwNDAxYjQ3NzI4MzUwOTEuanBnEiDbDveiYPQFQ7g2IKeCTiQbPNJ-jP2XW0pTEX0dzb5N3w",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://hotels.prf.hn/l/zpJ5QBl/pubref:193063038437036032?mfadid=adm",
+				"hostname": "hotels.prf",
+				"sendAttributionRequest": false,
+				"label": "Hotels.com",
+				"show_sponsored_label": true,
+				"sponsored_position": 3,
+				"sponsored_click_url": "https://bridge.ric1.admarketplace.net/ctp?version=1.0.0&encp=jnEYxmwVJQkX5QbUftINI%3DwqgCfnxGEkgClr4CbW1CxWfCDZfCbnHnwqI%3DEYD%3DcYHFdZgDdDirv43cwPCD344l_lCC443lkYCD34sBIWHQkXfpbUftIdj%3DqzfOIdImqzfOIuxr3WGmwqspkW7nuriF2zfZDa1pLmfCla7RcdIG7_iF2zfCqZfpHZfpfa4pfrfpfmfpfY7ndZj92zftIYj%3D7TgFINJ94w7Rekj%3DwqgCbnI9eQiF2zftIQj9wvIpkY7n4YIFwqgClW4C8_7ReTiF2zfCbW4YIqxreOiF2zfC2rfYIqxreNI9IvIpkX4pfZ7n3Zx%3DcdI9IvIpkafZDd7n3Zx%3DwViF2zfCfm4OINI94TiF2zfCqZfpHZfpfa4p2_4QfX4ZDZ7R4TJr3UjFkzfYIYj%3DzZgB%2FM6QTS1Y%2FniFwQgBkX1YkX1YkX1YkX1YkX7nEUEE7fgDX82C4nEw3%2F1cxksFWXCwcTinNkjdxm4kEHFnIBfwjuxF4B2mjqxpE%3DIG7g4nvGxmNqI9Iq3DEvFq_u7C7%3DjkTaIZN9FGjfFDw519v1BkuOFDdwBcfrxcDWBw%2Fwfq7uDccaHwHmB%3DuwHkw9CFceIl8W3nufxn7qI9437C4l7C4l7n4WgCbU4CHWftWW5p8_4pqTftWW5plWfpxT5tWT593vJ%3DEZxtXOHF4oInwTJczQJm_qjF4vjnDy",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkX1CfW4QfWfZLkfZxWfZHWfZ8nj9wWIBdvIpkY7n4YIFckiGIw5FwqgClW4C8%2B7ReTHF4wJFEUjtdvIpkXfpbr7ncq5G4wJ%3DEQj%3DwVJOdvIpkX1CfW4QfWfZLk4pqmfZlr4CfnxmXVjtdUjFdOIG8zfWyy",
+				"sponsored_tile_id": 75173,
+				"partner": "amp",
+				"favicon": "https://ads-img.mozilla.org/v1/images?image_data=CnAKbmh0dHBzOi8vYW1wLWFzc2V0LjQ1dHUxYzAuY29tL2Fzc2V0cy8xNDMzL2ZjYmI1OGQ1ODAwMmEwYmJkYmFiZmE3ZmM0MjYzMmYxNjZiZjlkYzEwMmQzMDU1MDNiMDU2ZTI3YWMxZjY4ODUuanBnEiA5fkM31kNXi7wM3-JY-xWR3mgAcTmItUfOpkzREEemXg",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.wikipedia.org/",
+				"hostname": "wikipedia",
+				"sendAttributionRequest": false,
+				"label": "Wikipedia",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/wikipedia-org@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/wikipedia-org.ico",
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.youtube.com/",
+				"hostname": "youtube",
+				"sendAttributionRequest": false,
+				"label": "YouTube",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/youtube-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/youtube-com.png",
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://apnews.com/",
+				"hostname": "apnews",
+				"sendAttributionRequest": false,
+				"label": "AP News",
+				"typedBonus": true,
+				"screenshot": null
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.reddit.com/",
+				"hostname": "reddit",
+				"sendAttributionRequest": false,
+				"label": "Reddit",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/reddit-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/reddit-com.png",
+				"typedBonus": true
+			}
+		],
+		"editForm": null,
+		"showSearchShortcutsForm": false,
+		"searchShortcuts": [
+			{
+				"keyword": "@google",
+				"shortURL": "google",
+				"url": "https://google.com",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/google-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/google-com.ico"
+			},
+			{
+				"keyword": "@amazon",
+				"shortURL": "amazon",
+				"url": "https://amazon.com",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/amazon@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/amazon.ico"
+			},
+			{
+				"keyword": "@bing",
+				"shortURL": "bing",
+				"url": "https://bing.com",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/bing-com@2x.svg",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/bing-com.ico"
+			},
+			{
+				"keyword": "@duckduckgo",
+				"shortURL": "duckduckgo",
+				"url": "https://duckduckgo.com",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/duckduckgo-com@2x.svg",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/duckduckgo-com.ico"
+			},
+			{
+				"keyword": "@ebay",
+				"shortURL": "ebay",
+				"url": "https://ebay.com",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/ebay@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/ebay.ico"
+			},
+			{
+				"keyword": "@wikipedia",
+				"shortURL": "wikipedia",
+				"url": "https://wikipedia.org",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/wikipedia-org@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/wikipedia-org.ico"
+			}
+		],
+		"sov": {
+			"ready": true,
+			"positions": [
+				{
+					"position": 1,
+					"assignedPartner": "amp"
+				},
+				{
+					"position": 2,
+					"assignedPartner": "amp"
+				},
+				{
+					"position": 3,
+					"assignedPartner": "amp"
+				}
+			]
+		},
+		"pref": {
+			"collapsed": false
+		}
+	},
+	"App": {
+		"initialized": true,
+		"locale": "en-US",
+		"isForStartupCache": true,
+		"customizeMenuVisible": false,
+		"links": [
+			{
+				"isDefault": true,
+				"url": "https://www.amazon.com/?tag=admarketus-20&ref=pd_sl_21a89719c55232eaed9b870d40a60e8e9e4940c1958f1ec5329b5a96&mfadid=adm",
+				"hostname": "amazon",
+				"sendAttributionRequest": false,
+				"label": "Amazon",
+				"show_sponsored_label": true,
+				"sponsored_position": 1,
+				"sponsored_click_url": "https://bridge.ric1.admarketplace.net/ctp?version=1.0.0&encp=jnEYxmwVJQkX5QbUftINI%3DwqgClnxGEkgClr4CbW1CxWfCDZfCbnHnwqI%3DEYD%3DcYHFdZgF49DnIQfRNnCFv%3DilzliZ44E%3DXSCw3EsDdPBnXIEdIoCdj74l_P2nu13l7%2FCnvtJlz9ECEiEcldCq3tiqdDiZcg3dwaFwj4fDdPBCEIiwI%2FCd3I7ReOgClWftaW7REkiCkY7RERiCkY7ndZj9eKiF3agCbnirjvIpkZ4CxafZLk4CqnxGEwxRwvIpkX1CfW4QfWfZLkfZxWfZHWfZ8nJG4kjpkW7R7kHnWzIncTxmDnx93kiF2zftIqx%3D4vIpkW7ncWfZd4DZeaCc37jldCf9N1sqdkCEfWslzpf9NfElEkCcH_IqzDEC44iqDZCGvtIOIQj9wvIpkY7n4YIFwqgCLZfplnx%3DXvIpkXfpbr7n3Zx%3D7vIpkXfpl_7n3Zx%3DcqjnwqgClWfClnI94WHGEqjnwqgCHafQlnI94WiFzvIpkX4pHm7ncqxmXvIpkX1CfW4QfWfZLk4pqmfZlk4QlnxmXVj%3D_dJCkX7R7kJrfz6QTS1Y%2FM6OIviFfz5ClM5ClM5ClM5ClM5ClnIF_EDqWzClNefmIFE%3DLaEZIUxDuFC94wCwckflutEqIFfR3FsQEG3mjU3DEWfl_rBrvg7C7t3lD_id3Ns9IojCcOfQ4qBkc_En_2HGvUsRI9sw4D1FIPfw4%3DDmcmFFXaxqX9BCwCFQ7GiclrD9bm3cHmsCIiFG4i4c45BwIZicN1jZ44i%3DXwBQjvCQNo2QjE7C7tiR3P3p7mFRLrIDEDfqEtsEIe7C7t4Dc4FDdt3%3D4O3cegECDaCD_uDFj6Dl7d2Gxwfk2wfk2nHrbzftaZfQbW5pbTfCbX4tWW5pbTfCbW4YWT5tWTj%3DwTIG4W5%3D7NHmuniFXTGm4VJn3dHmwmI2yy",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkX1CfW4QfWfZLkfZxWfZHWfZ8nj9wWIBdvIpkY7n4YIFckiGIw5FwqgCLZfplnx%3DXNHmEuIF%2Bk5FwqgClWfpxnHF2uxmETIF4kiFzU5FwqgCl%2BfZbmfZbZ1p2k1CHZfC2mfBIZJ%3Dzk5F%2BdJF7wxQkX",
+				"sponsored_tile_id": 74301,
+				"partner": "amp",
+				"favicon": "https://ads-img.mozilla.org/v1/images?image_data=CjoKOGh0dHBzOi8vYW1wLWFzc2V0LjQ1dHUxYzAuY29tL2Fzc2V0cy8xMDExLzE2MDI1MTczODUuanBnEiCPWEpTJukrjsNjZdZ-ENKI3O38x6nmTcNlFXn6RNaaQQ",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://expedia.prf.hn/l/jXpJ1VQ/pubref:193063038437036032?mfadid=adm",
+				"hostname": "expedia.prf",
+				"sendAttributionRequest": false,
+				"label": "Expedia",
+				"show_sponsored_label": true,
+				"sponsored_position": 2,
+				"sponsored_click_url": "https://bridge.ric1.admarketplace.net/ctp?version=1.0.0&encp=jnEYxmwVJQkX5QbUftINI%3DwqgC8nxGEkgClr4CbW1CxWfCDZfCbnHnwqI%3DEYD%3DcYHFdZgDdDirv43cwPCD344l_lCC443lkYCD34sBIWHQkXfpbUftIdj%3DqzfOIdImqzfOIuxr3WGmwqspkW7nuriF2zfZDa1pLmfplk7RcdIG7_iF2zfCqZfpHZfpfa4pfrfpfmfpfY7ndZj92zftIYj%3D7TgFINJ94w7Rekj%3DwqgCbnI9eQiF2zftIQj9wvIpkY7n4YIFwqgClW4px_7ReTiF2zfCbW4YIqxreOiF2zfC2rfYIqxreNI9IvIpkX4pfY7n3Zx%3DcdI9IvIpkafZlW7n3Zx%3DwViF2zfCfm4BINI94TiF2zfCqZfpHZfpfa4p2_4QfX4Z2r7R4TJr3UjFkzfOIYj%3DzZgB%2FM6QTS1Y%2FniFwQgBkX1YkX1YkX1YkX1YkX7nEUEE7fgDX82C4nEw3%2F1cxmJkvlBYDY3QH_JmzGjG4BiRvR2Z4UFFX4FQcE1GI2IdcICR4mDd4t4d3V2qkwfqIm4k_B3ce4BDvtikjpfd%2FYHm3pFww54EqmJRNUHwcosGItEcj%2Fir8k7C7%3Dj9vm3ZDZCnED1Dzf3n7wCl_Sx%3DNW3mxwfk2wfk2nHrbzfBak4pbW5pbTfQqYfOWW5pbTfCbW4YWT5tWTj%3DwTIG4W5%3D7NHmuniFXTGm4VJn3dHmwmI2yy",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkX1CfW4QfWfZLkfZxWfZHWfZ8nj9wWIBdvIpkY7n4YIFckiGIw5FwqgClW4px%2B7ReTHF4wJFEUjtdvIpkXfpbr7ncq5G4wJ%3DEQj%3DwVJOdvIpkX1CfW4QfWfZLk4pqmfZlr4pxnxmXVjtdUjFdOIG8zfLyy",
+				"sponsored_tile_id": 75171,
+				"partner": "amp",
+				"favicon": "https://ads-img.mozilla.org/v1/images?image_data=CnAKbmh0dHBzOi8vYW1wLWFzc2V0LjQ1dHUxYzAuY29tL2Fzc2V0cy8xNDMyL2ZkNWJjODZjYjRjODg1MDgyZTY2ZGY4NzdlYjQ0OTRjZWIyYzY2ZDc2ODVlMzdhODIwNDAxYjQ3NzI4MzUwOTEuanBnEiDbDveiYPQFQ7g2IKeCTiQbPNJ-jP2XW0pTEX0dzb5N3w",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://hotels.prf.hn/l/zpJ5QBl/pubref:193063038437036032?mfadid=adm",
+				"hostname": "hotels.prf",
+				"sendAttributionRequest": false,
+				"label": "Hotels.com",
+				"show_sponsored_label": true,
+				"sponsored_position": 3,
+				"sponsored_click_url": "https://bridge.ric1.admarketplace.net/ctp?version=1.0.0&encp=jnEYxmwVJQkX5QbUftINI%3DwqgCfnxGEkgClr4CbW1CxWfCDZfCbnHnwqI%3DEYD%3DcYHFdZgDdDirv43cwPCD344l_lCC443lkYCD34sBIWHQkXfpbUftIdj%3DqzfOIdImqzfOIuxr3WGmwqspkW7nuriF2zfZDa1pLmfCla7RcdIG7_iF2zfCqZfpHZfpfa4pfrfpfmfpfY7ndZj92zftIYj%3D7TgFINJ94w7Rekj%3DwqgCbnI9eQiF2zftIQj9wvIpkY7n4YIFwqgClW4C8_7ReTiF2zfCbW4YIqxreOiF2zfC2rfYIqxreNI9IvIpkX4pfZ7n3Zx%3DcdI9IvIpkafZDd7n3Zx%3DwViF2zfCfm4OINI94TiF2zfCqZfpHZfpfa4p2_4QfX4ZDZ7R4TJr3UjFkzfYIYj%3DzZgB%2FM6QTS1Y%2FniFwQgBkX1YkX1YkX1YkX1YkX7nEUEE7fgDX82C4nEw3%2F1cxksFWXCwcTinNkjdxm4kEHFnIBfwjuxF4B2mjqxpE%3DIG7g4nvGxmNqI9Iq3DEvFq_u7C7%3DjkTaIZN9FGjfFDw519v1BkuOFDdwBcfrxcDWBw%2Fwfq7uDccaHwHmB%3DuwHkw9CFceIl8W3nufxn7qI9437C4l7C4l7n4WgCbU4CHWftWW5p8_4pqTftWW5plWfpxT5tWT593vJ%3DEZxtXOHF4oInwTJczQJm_qjF4vjnDy",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkX1CfW4QfWfZLkfZxWfZHWfZ8nj9wWIBdvIpkY7n4YIFckiGIw5FwqgClW4C8%2B7ReTHF4wJFEUjtdvIpkXfpbr7ncq5G4wJ%3DEQj%3DwVJOdvIpkX1CfW4QfWfZLk4pqmfZlr4CfnxmXVjtdUjFdOIG8zfWyy",
+				"sponsored_tile_id": 75173,
+				"partner": "amp",
+				"favicon": "https://ads-img.mozilla.org/v1/images?image_data=CnAKbmh0dHBzOi8vYW1wLWFzc2V0LjQ1dHUxYzAuY29tL2Fzc2V0cy8xNDMzL2ZjYmI1OGQ1ODAwMmEwYmJkYmFiZmE3ZmM0MjYzMmYxNjZiZjlkYzEwMmQzMDU1MDNiMDU2ZTI3YWMxZjY4ODUuanBnEiA5fkM31kNXi7wM3-JY-xWR3mgAcTmItUfOpkzREEemXg",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.wikipedia.org/",
+				"hostname": "wikipedia",
+				"sendAttributionRequest": false,
+				"label": "Wikipedia",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/wikipedia-org@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/wikipedia-org.ico",
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.youtube.com/",
+				"hostname": "youtube",
+				"sendAttributionRequest": false,
+				"label": "YouTube",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/youtube-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/youtube-com.png",
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://apnews.com/",
+				"hostname": "apnews",
+				"sendAttributionRequest": false,
+				"label": "AP News",
+				"typedBonus": true,
+				"screenshot": null
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.reddit.com/",
+				"hostname": "reddit",
+				"sendAttributionRequest": false,
+				"label": "Reddit",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/reddit-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/reddit-com.png",
+				"typedBonus": true
+			}
+		],
+		"pref": {
+			"collapsed": false
+		}
+	},
+	"ASRouter": {
+		"initialized": false
+	},
+	"Prefs": {
+		"initialized": true,
+		"values": {
+			"default.sites": "https://www.youtube.com/,https://www.facebook.com/,https://www.amazon.com/,https://www.reddit.com/,https://www.wikipedia.org/,https://twitter.com/",
+			"feeds.section.topstories.options": "{\"api_key_pref\":\"extensions.pocket.oAuthConsumerKey\",\"hidden\":false,\"provider_icon\":\"chrome://global/skin/icons/pocket.svg\",\"provider_name\":\"Pocket\",\"read_more_endpoint\":\"https://getpocket.com/explore/trending?src=fx_new_tab\",\"stories_endpoint\":\"https://getpocket.cdn.mozilla.net/v3/firefox/global-recs?version=3&consumer_key=$apiKey&locale_lang=en-US&feed_variant=default_spocs_on\",\"stories_referrer\":\"https://getpocket.com/recommendations\",\"topics_endpoint\":\"https://getpocket.cdn.mozilla.net/v3/firefox/trending-topics?version=2&consumer_key=$apiKey&locale_lang=en-US\",\"show_spocs\":true}",
+			"feeds.topsites": true,
+			"hideTopSitesTitle": false,
+			"showSponsored": true,
+			"system.showSponsored": true,
+			"showSponsoredTopSites": true,
+			"system.showWeather": false,
+			"showWeather": true,
+			"weather.query": "",
+			"weather.locationSearchEnabled": false,
+			"weather.temperatureUnits": "f",
+			"weather.display": "simple",
+			"pocketCta": "{\"cta_button\":\"\",\"cta_text\":\"\",\"cta_url\":\"\",\"use_cta\":false}",
+			"showSearch": true,
+			"topSitesRows": 1,
+			"telemetry": true,
+			"telemetry.ut.events": false,
+			"telemetry.structuredIngestion.endpoint": "https://incoming.telemetry.mozilla.org/submit",
+			"section.highlights.includeVisited": true,
+			"section.highlights.includeBookmarks": true,
+			"section.highlights.includePocket": true,
+			"section.highlights.includeDownloads": true,
+			"section.highlights.rows": 1,
+			"section.topstories.rows": 1,
+			"sectionOrder": "topsites,topstories,highlights",
+			"newtabWallpapers.enabled": false,
+			"newtabWallpapers.v2.enabled": false,
+			"newtabWallpapers.highlightEnabled": false,
+			"newtabWallpapers.highlightDismissed": false,
+			"newtabWallpapers.highlightSeenCounter": 0,
+			"newtabWallpapers.highlightHeaderText": "",
+			"newtabWallpapers.highlightContentText": "",
+			"newtabWallpapers.highlightCtaText": "",
+			"newtabWallpapers.wallpaper-light": "",
+			"newtabWallpapers.wallpaper-dark": "",
+			"newtabWallpapers.wallpaper": "",
+			"improvesearch.noDefaultSearchTile": true,
+			"improvesearch.topSiteSearchShortcuts.searchEngines": "google,amazon",
+			"improvesearch.topSiteSearchShortcuts.havePinned": "",
+			"asrouter.devtoolsEnabled": false,
+			"asrouter.providers.onboarding": "{\"id\":\"onboarding\",\"type\":\"local\",\"localProvider\":\"OnboardingMessageProvider\",\"enabled\":true,\"exclude\":[]}",
+			"discoverystream.flight.blocks": "{}",
+			"discoverystream.config": "{\"api_key_pref\":\"extensions.pocket.oAuthConsumerKey\",\"collapsible\":true,\"enabled\":true}",
+			"discoverystream.endpoints": "https://getpocket.cdn.mozilla.net/,https://firefox-api-proxy.cdn.mozilla.net/,https://spocs.getpocket.com/",
+			"discoverystream.isCollectionDismissible": true,
+			"discoverystream.onboardingExperience.dismissed": false,
+			"discoverystream.region-basic-layout": false,
+			"discoverystream.spoc.impressions": "{}",
+			"discoverystream.endpointSpocsClear": "https://spocs.getpocket.com/user",
+			"discoverystream.rec.impressions": "{}",
+			"showRecentSaves": true,
+			"feeds.aboutpreferences": true,
+			"feeds.newtabinit": true,
+			"feeds.places": true,
+			"feeds.prefs": true,
+			"feeds.sections": true,
+			"feeds.section.highlights": false,
+			"feeds.system.topstories": true,
+			"feeds.systemtick": true,
+			"feeds.telemetry": true,
+			"feeds.favicon": true,
+			"feeds.system.topsites": true,
+			"feeds.recommendationprovider": true,
+			"feeds.discoverystreamfeed": true,
+			"feeds.wallpaperfeed": true,
+			"feeds.weatherfeed": true,
+			"isPrivateBrowsingEnabled": true,
+			"platform": "linux",
+			"region": "US",
+			"fxa_endpoint": "https://accounts.firefox.com/",
+			"appUpdateChannel": "esr",
+			"improvesearch.topSiteSearchShortcuts": true,
+			"mayHaveSponsoredTopSites": true,
+			"improvesearch.handoffToAwesomebar": true,
+			"featureConfig": {
+				"customizationMenuEnabled": null,
+				"topSitesContileEnabled": true
+			},
+			"pocketConfig": {
+				"spocPositions": "1,5,7,11,18,20",
+				"spocTopsitesPositions": "2",
+				"contileTopsitesPositions": "0,1,2",
+				"spocAdTypes": "",
+				"spocZoneIds": "",
+				"spocTopsitesAdTypes": "",
+				"spocTopsitesZoneIds": "",
+				"spocTopsitesPlacementEnabled": true,
+				"spocSiteId": "",
+				"widgetPositions": "",
+				"hybridLayout": false,
+				"hideCardBackground": false,
+				"fourCardLayout": false,
+				"newFooterSection": false,
+				"saveToPocketCard": true,
+				"saveToPocketCardRegions": "",
+				"hideDescriptions": false,
+				"hideDescriptionsRegions": "",
+				"compactGrid": false,
+				"compactImages": false,
+				"imageGradient": false,
+				"titleLines": 3,
+				"descLines": 3,
+				"onboardingExperience": false,
+				"essentialReadsHeader": false,
+				"editorsPicksHeader": false,
+				"recentSavesEnabled": false,
+				"readTime": true,
+				"newSponsoredLabel": false,
+				"sendToPocket": true,
+				"recsPersonalized": false,
+				"spocsPersonalized": true,
+				"spocsCacheTimeout": null,
+				"ctaButtonSponsors": "",
+				"ctaButtonVariant": "",
+				"spocMessageVariant": "",
+				"regionStoriesConfig": "US,DE,CA,GB,IE,CH,AT,BE,IN,FR,IT,ES",
+				"regionBffConfig": "US,DE,CA,GB,IE,CH,AT,BE,IN,FR,IT,ES",
+				"regionStoriesBlock": "",
+				"localeListConfig": "",
+				"regionSpocsConfig": "US,CA,DE,GB,FR,IT,ES",
+				"regionWeatherConfig": "",
+				"topSitesContileSovEnabled": true,
+				"pocketFeedParameters": ""
+			},
+			"logowordmark.alwaysVisible": true,
+			"feeds.section.topstories": true,
+			"discoverystream.enabled": true,
+			"discoverystream.sponsored-collections.enabled": false,
+			"discoverystream.hardcoded-basic-layout": false,
+			"discoverystream.personalization.enabled": true,
+			"discoverystream.personalization.override": false,
+			"discoverystream.personalization.modelKeys": "nb_model_arts_and_entertainment, nb_model_autos_and_vehicles, nb_model_beauty_and_fitness, nb_model_blogging_resources_and_services, nb_model_books_and_literature, nb_model_business_and_industrial, nb_model_computers_and_electronics, nb_model_finance, nb_model_food_and_drink, nb_model_games, nb_model_health, nb_model_hobbies_and_leisure, nb_model_home_and_garden, nb_model_internet_and_telecom, nb_model_jobs_and_education, nb_model_law_and_government, nb_model_online_communities, nb_model_people_and_society, nb_model_pets_and_animals, nb_model_real_estate, nb_model_reference, nb_model_science, nb_model_shopping, nb_model_sports, nb_model_travel",
+			"discoverystream.spocs-endpoint": "",
+			"discoverystream.spocs-endpoint-query": "",
+			"newNewtabExperience.colors": "#0090ED,#FF4F5F,#2AC3A2,#FF7139,#A172FF,#FFA437,#FF2A8A"
+		}
+	},
+	"Dialog": {
+		"visible": false,
+		"data": {}
+	},
+	"Sections": [
+		{
+			"title": {
+				"id": "newtab-section-header-stories"
+			},
+			"rows": [],
+			"enabled": true,
+			"id": "topstories",
+			"pref": {
+				"titleString": {
+					"id": "home-prefs-recommended-by-header-generic"
+				},
+				"descString": {
+					"id": "home-prefs-recommended-by-description-generic"
+				},
+				"nestedPrefs": [
+					{
+						"name": "showSponsored",
+						"titleString": "home-prefs-recommended-by-option-sponsored-stories",
+						"icon": "icon-info",
+						"eventSource": "POCKET_SPOCS"
+					}
+				],
+				"learnMore": {
+					"link": {
+						"href": "https://getpocket.com/firefox/new_tab_learn_more",
+						"id": "home-prefs-recommended-by-learn-more"
+					}
+				},
+				"collapsed": false,
+				"feed": "feeds.section.topstories"
+			},
+			"shouldHidePref": false,
+			"eventSource": "TOP_STORIES",
+			"icon": "chrome://global/skin/icons/pocket.svg",
+			"learnMore": {
+				"link": {
+					"href": "https://getpocket.com/firefox/new_tab_learn_more",
+					"message": {
+						"id": "newtab-pocket-learn-more"
+					}
+				}
+			},
+			"compactCards": false,
+			"rowsPref": "section.topstories.rows",
+			"maxRows": 4,
+			"availableLinkMenuOptions": [
+				"CheckBookmarkOrArchive",
+				"CheckSavedToPocket",
+				"Separator",
+				"OpenInNewWindow",
+				"OpenInPrivateWindow",
+				"Separator",
+				"BlockUrl"
+			],
+			"emptyState": {
+				"message": {
+					"id": "newtab-empty-section-topstories-generic"
+				},
+				"icon": "check"
+			},
+			"shouldSendImpressionStats": true,
+			"dedupeFrom": [
+				"highlights"
+			],
+			"options": {
+				"api_key_pref": "extensions.pocket.oAuthConsumerKey",
+				"hidden": false,
+				"provider_icon": "chrome://global/skin/icons/pocket.svg",
+				"provider_name": "Pocket",
+				"read_more_endpoint": "https://getpocket.com/explore/trending?src=fx_new_tab",
+				"stories_endpoint": "https://getpocket.cdn.mozilla.net/v3/firefox/global-recs?version=3&consumer_key=$apiKey&locale_lang=en-US&feed_variant=default_spocs_on",
+				"stories_referrer": "https://getpocket.com/recommendations",
+				"topics_endpoint": "https://getpocket.cdn.mozilla.net/v3/firefox/trending-topics?version=2&consumer_key=$apiKey&locale_lang=en-US",
+				"show_spocs": true
+			},
+			"contextMenuOptions": [
+				"CheckBookmarkOrArchive",
+				"CheckSavedToPocket",
+				"Separator",
+				"OpenInNewWindow",
+				"OpenInPrivateWindow",
+				"Separator",
+				"BlockUrl"
+			],
+			"initialized": false,
+			"dedupeConfigurations": [
+				{
+					"id": "topstories",
+					"dedupeFrom": [
+						"highlights"
+					]
+				}
+			]
+		},
+		{
+			"title": {
+				"id": "newtab-section-header-recent-activity"
+			},
+			"rows": [],
+			"enabled": false,
+			"id": "highlights",
+			"pref": {
+				"titleString": {
+					"id": "home-prefs-recent-activity-header"
+				},
+				"descString": {
+					"id": "home-prefs-recent-activity-description"
+				},
+				"nestedPrefs": [
+					{
+						"name": "section.highlights.includeVisited",
+						"titleString": "home-prefs-highlights-option-visited-pages"
+					},
+					{
+						"name": "section.highlights.includeBookmarks",
+						"titleString": "home-prefs-highlights-options-bookmarks"
+					},
+					{
+						"name": "section.highlights.includeDownloads",
+						"titleString": "home-prefs-highlights-option-most-recent-download"
+					},
+					{
+						"name": "section.highlights.includePocket",
+						"titleString": "home-prefs-highlights-option-saved-to-pocket",
+						"hidden": false
+					}
+				],
+				"collapsed": false,
+				"feed": "feeds.section.highlights"
+			},
+			"shouldHidePref": false,
+			"eventSource": "HIGHLIGHTS",
+			"icon": "chrome://global/skin/icons/highlights.svg",
+			"compactCards": true,
+			"rowsPref": "section.highlights.rows",
+			"maxRows": 4,
+			"emptyState": {
+				"message": {
+					"id": "newtab-empty-section-highlights"
+				},
+				"icon": "chrome://global/skin/icons/highlights.svg"
+			},
+			"shouldSendImpressionStats": false,
+			"options": {},
+			"initialized": false
+		}
+	],
+	"Pocket": {
+		"isUserLoggedIn": null,
+		"pocketCta": {},
+		"waitingForSpoc": true
+	},
+	"Personalization": {
+		"lastUpdated": null,
+		"initialized": false
+	},
+	"DiscoveryStream": {
+		"config": {
+			"api_key_pref": "extensions.pocket.oAuthConsumerKey",
+			"collapsible": true,
+			"enabled": true
+		},
+		"layout": [
+			{
+				"width": 12,
+				"components": [
+					{
+						"type": "TopSites",
+						"header": {
+							"title": {
+								"id": "newtab-section-header-topsites"
+							}
+						},
+						"placement": {
+							"name": "sponsored-topsites",
+							"ad_types": [
+								3120
+							],
+							"zone_ids": [
+								280143
+							]
+						},
+						"spocs": {
+							"probability": 1,
+							"prefs": [
+								"showSponsoredTopSites"
+							],
+							"positions": [
+								{
+									"index": 2
+								}
+							]
+						},
+						"properties": {}
+					},
+					{
+						"type": "Message",
+						"essentialReadsHeader": false,
+						"editorsPicksHeader": false,
+						"header": {
+							"title": {
+								"id": "newtab-section-header-stories"
+							},
+							"subtitle": "",
+							"link_text": {
+								"id": "newtab-pocket-learn-more"
+							},
+							"link_url": "https://getpocket.com/firefox/new_tab_learn_more",
+							"icon": "chrome://global/skin/icons/pocket.svg"
+						},
+						"properties": {
+							"spocMessageVariant": ""
+						},
+						"styles": {
+							".ds-message": "margin-bottom: -20px"
+						}
+					},
+					{
+						"type": "CardGrid",
+						"properties": {
+							"items": 21,
+							"hybridLayout": false,
+							"hideCardBackground": false,
+							"fourCardLayout": false,
+							"compactGrid": false,
+							"essentialReadsHeader": false,
+							"editorsPicksHeader": false,
+							"onboardingExperience": false,
+							"ctaButtonSponsors": [
+								""
+							],
+							"ctaButtonVariant": "",
+							"spocMessageVariant": ""
+						},
+						"widgets": {
+							"positions": [],
+							"data": [
+								{
+									"type": "TopicsWidget"
+								}
+							]
+						},
+						"cta_variant": "link",
+						"header": {
+							"title": ""
+						},
+						"placement": {
+							"name": "spocs",
+							"ad_types": [
+								3617
+							],
+							"zone_ids": [
+								217758,
+								217995
+							]
+						},
+						"feed": {
+							"embed_reference": null,
+							"url": "https://firefox-api-proxy.cdn.mozilla.net/desktop/v1/recommendations?locale=$locale&region=$region&count=30"
+						},
+						"spocs": {
+							"probability": 1,
+							"positions": [
+								{
+									"index": 1
+								},
+								{
+									"index": 5
+								},
+								{
+									"index": 7
+								},
+								{
+									"index": 11
+								},
+								{
+									"index": 18
+								},
+								{
+									"index": 20
+								}
+							]
+						}
+					},
+					{
+						"type": "Navigation",
+						"newFooterSection": false,
+						"properties": {
+							"alignment": "left-align",
+							"links": [
+								{
+									"name": "Self improvement",
+									"url": "https://getpocket.com/explore/self-improvement?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Food",
+									"url": "https://getpocket.com/explore/food?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Entertainment",
+									"url": "https://getpocket.com/explore/entertainment?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Health & fitness",
+									"url": "https://getpocket.com/explore/health?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Science",
+									"url": "https://getpocket.com/explore/science?utm_source=pocket-newtab"
+								},
+								{
+									"name": "More recommendations ›",
+									"url": "https://getpocket.com/explore?utm_source=pocket-newtab"
+								}
+							],
+							"extraLinks": [
+								{
+									"name": "Career",
+									"url": "https://getpocket.com/explore/career?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Technology",
+									"url": "https://getpocket.com/explore/technology?utm_source=pocket-newtab"
+								}
+							],
+							"privacyNoticeURL": {
+								"url": "https://www.mozilla.org/privacy/firefox/#recommend-relevant-content",
+								"title": {
+									"id": "newtab-section-menu-privacy-notice"
+								}
+							}
+						},
+						"header": {
+							"title": {
+								"id": "newtab-pocket-read-more"
+							}
+						},
+						"styles": {
+							".ds-navigation": "margin-top: -10px;"
+						}
+					}
+				]
+			}
+		],
+		"isPrivacyInfoModalVisible": false,
+		"isCollectionDismissible": true,
+		"feeds": {
+			"data": {
+				"https://firefox-api-proxy.cdn.mozilla.net/desktop/v1/recommendations?locale=$locale&region=$region&count=30": {
+					"lastUpdated": 1750098911512,
+					"personalized": false,
+					"data": {
+						"settings": {},
+						"recommendations": [
+							{
+								"id": 7138808838046082,
+								"url": "https://edition.cnn.com/2025/06/14/us/minnesota-shootings-manhunt-vance-boelter-invs?utm_source=firefox-newtab-en-us",
+								"title": "What We Know About the Minnesota Shooting Suspect",
+								"excerpt": "Vance Boelter, 57, was arrested Sunday night in the city of Green Isle, Minnesota, where he lived, according to authorities.",
+								"publisher": "CNN",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/e1883038-32c6-401e-8114-d2747bf3c416.png",
+								"recommendation_id": "d35f7a41-24b5-47b9-bbf2-e0eb2159894a",
+								"score": 1
+							},
+							{
+								"id": 3745322500634876,
+								"url": "https://www.vox.com/future-perfect/416398/ractopamine-pork-beef-elanco-animal-drug?utm_source=firefox-newtab-en-us",
+								"title": "The One Drug RFK Jr. Should Actually Ban",
+								"excerpt": "﻿The world’s “most controversial” food additive, explained.",
+								"publisher": "Vox",
+								"raw_image_src": "https://platform.vox.com/wp-content/uploads/sites/2/2025/06/GettyImages-968585794.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+								"recommendation_id": "4289aa0b-c9ee-4700-9609-3e3ddc974de3",
+								"score": 1
+							},
+							{
+								"id": 2692928546882795,
+								"url": "https://www.parents.com/dusting-dangerous-new-trend-among-teens-what-parents-should-know-11752820?utm_source=firefox-newtab-en-us",
+								"title": "‘Dusting’ Is a Dangerous New Trend Among Teens—Here’s What Parents Should Know",
+								"excerpt": "The easy access and low cost of aerosol cans is what makes inhalant abuse attractive to teens. But experts say they need to know just how deadly this practice is.",
+								"publisher": "Parents",
+								"raw_image_src": "https://www.parents.com/thmb/FGWdCLYRbVsR3-5AM4WTjssJwpA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/parentsdusting-b1d4325a075444b2bf388bb865a4defb.png",
+								"recommendation_id": "79e9a2d6-435b-4e35-bb68-b03631ca2249",
+								"score": 1
+							},
+							{
+								"id": 4626046968709150,
+								"url": "https://www.usatoday.com/story/entertainment/music/2025/06/16/nezza-dodgers-national-anthem-spanish/84225153007/?utm_source=firefox-newtab-en-us",
+								"title": "Singer Nezza Performs National Anthem in Spanish at Dodgers Stadium After Team Axed It",
+								"excerpt": "Rising R&B singer Nezza is going viral for her choice to sing the “Star Spangled Banner” in Spanish at a Los Angeles Dodgers baseball game, apparently despite the team’s request not to.",
+								"publisher": "USA TODAY",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/83f3ba54-daba-4ea7-9e5a-0b3496b54bab.jpeg",
+								"recommendation_id": "cbccbb58-938b-4dd0-8bb0-86ae643e53f4",
+								"score": 1
+							},
+							{
+								"id": 2028598240292902,
+								"url": "https://apnews.com/article/louvre-museum-paris-closed-lines-delay-2bbf9be4f49de739fd14dd4d908e4d72?utm_source=firefox-newtab-en-us",
+								"title": "Overwhelmed and Understaffed, the Louvre Shuts Its Doors — a Warning Sign for Global Overtourism",
+								"excerpt": "The Louvre Museum has failed to open on time Monday, leaving thousands of visitors stuck in long, unmoving lines.",
+								"publisher": "The Associated Press",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/8d1b9aa5-bebf-4461-a367-da12a108aef3.jpeg",
+								"recommendation_id": "829db305-c3a5-4c78-a734-e1e8a5d782f5",
+								"score": 1
+							},
+							{
+								"id": 3755956524032664,
+								"url": "https://getpocket.com/explore/item/what-happens-when-you-ve-been-on-ozempic-for-20-years?utm_source=firefox-newtab-en-us",
+								"title": "What Happens When You’ve Been on Ozempic for 20 Years?",
+								"excerpt": "The long-term effects of GLP-1 drugs are unknown.",
+								"publisher": "The Atlantic",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/ae3a534f-80ec-4d83-a8fb-bb11a48639e1.jpeg",
+								"recommendation_id": "18de01cf-de88-447e-945d-d90d9385df00",
+								"score": 1
+							},
+							{
+								"id": 4473428856905508,
+								"url": "https://www.nbcnews.com/news/us-news/omaha-immigration-workplace-raid-aftermath-rcna212931?utm_source=firefox-newtab-en-us",
+								"title": "How a City in Nebraska Is Recovering After the State’s Largest Worksite Immigration Raid",
+								"excerpt": "The city of Omaha is trying to forge ahead following the raid’s chilling effect on the local workforce and the community at large.",
+								"publisher": "NBC News",
+								"raw_image_src": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2025-06/250613-omaha-ice-raid-glenn-valley-foods-social-se-1150p-ac2e38.jpg",
+								"recommendation_id": "ebe6a655-30ad-46b3-9c10-b225c9bb7e84",
+								"score": 1
+							},
+							{
+								"id": 1953137382785787,
+								"url": "https://www.404media.co/humans-have-now-seen-the-dawn-of-time-from-earth-after-breakthrough/?utm_source=firefox-newtab-en-us",
+								"title": "Humans Have Now Seen the Dawn of Time From Earth After Breakthrough",
+								"excerpt": "Telescopes perched on the Andes Mountains glimpsed elusive encounters fueled by the first of the first stars in the universe more than 13 billion years ago.",
+								"publisher": "404 Media",
+								"raw_image_src": "https://www.404media.co/content/images/size/w1200/2025/06/Untitled.png",
+								"recommendation_id": "18feb030-431a-41b3-bdee-6a253c477340",
+								"score": 1
+							},
+							{
+								"id": 8104517922974375,
+								"url": "https://www.popularmechanics.com/science/archaeology/a65025285/holy-grail-of-shipwrecks/?utm_source=firefox-newtab-en-us",
+								"title": "The ‘Holy Grail of Shipwrecks’ Is Still Underwater. So Is Its $17 Billion Fortune.",
+								"excerpt": "That’s a lot of lost loot.",
+								"publisher": "Popular Mechanics",
+								"raw_image_src": "https://hips.hearstapps.com/hmg-prod/images/scuba-diver-observing-a-large-shipwreck-completely-royalty-free-image-1749676425.pjpeg?crop=1xw:0.75035xh;center,top&resize=1200:*",
+								"recommendation_id": "7c16ac53-19c9-4317-965a-05f6bd706cb9",
+								"score": 1
+							},
+							{
+								"id": 6805823253561475,
+								"url": "https://www.mprnews.org/story/2025/06/15/manhunt-vance-boelter-suspect-shootings-minnesota-lawmakers-melissa-hortman-john-hoffman?utm_source=firefox-newtab-en-us",
+								"title": "Vance Boelter Captured, Charged in Shootings of Minnesota Lawmakers",
+								"excerpt": "Authorities Sunday arrested 57-year-old Vance Boelter following the largest manhunt in state history.",
+								"publisher": "MPR News",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/8f20ef1b-14ea-4a30-9b5d-f9ee4e0121f2.png",
+								"recommendation_id": "50c3c311-58cd-4715-bd2f-63ca63fb3134",
+								"score": 1
+							},
+							{
+								"id": 1719719267077222,
+								"url": "https://www.cbsnews.com/news/cdc-urges-summer-camps-to-check-for-measles-immunity-as-u-s-nears-record/?utm_source=firefox-newtab-en-us",
+								"title": "CDC Urges Summer Camps to Check for Measles Immunity, As U.S. Nears Record",
+								"excerpt": "The CDC’s new “checklist” comes amid a deadly year of measles outbreaks that is now near record levels.",
+								"publisher": "CBS News",
+								"raw_image_src": "https://assets1.cbsnewsstatic.com/hub/i/r/2025/04/23/8fdc7ed4-0241-4309-8663-38f9651e30bd/thumbnail/1200x630/3967826f7bbc62cc5886404444a04cc3/gettyimages-2152300156.jpg?v=d2f497bd9339ad99d2e0559414346698",
+								"recommendation_id": "9e62d164-e0a4-445a-805d-350049916276",
+								"score": 1
+							},
+							{
+								"id": 6480822875982257,
+								"url": "https://www.themarshallproject.org/2025/06/14/ice-immigration-dhs-deportation-facts?utm_source=firefox-newtab-en-us",
+								"title": "The Feds Are Offering Migrants Cash to Self-Deport. Lawyers Call These Incentives Misleading.",
+								"excerpt": "The government’s offer to pay a stipend, waive fees, and let people return legally to the U.S. go against current law and court practices, immigration lawyers say.",
+								"publisher": "The Marshall Project",
+								"raw_image_src": "https://mirrorball.themarshallproject.org/t9t3yJDUZMF5FlUTfQcqZe0G70RKbCj6OAnorRQxnpc/w:1200/aHR0cHM6Ly9kMm0x/OXBtdnRzNWJvYi5j/bG91ZGZyb250Lm5l/dC9jYWNoZS84ZDR2/b2VtNzZuMDY0YWhv/dmdmODRkamRkMTls/LzI1MDYxM19HZXR0/eV9DQUVTU0FZMDYx/NF9zb2NpYWwuanBn",
+								"recommendation_id": "1028334d-4db8-4c72-bc01-e746f737618c",
+								"score": 1
+							},
+							{
+								"id": 288390007833658,
+								"url": "https://getpocket.com/explore/item/4-new-year-tidying-dos-and-don-ts-straight-from-a-professional-organizer?utm_source=firefox-newtab-en-us",
+								"title": "4 Tidying Dos and Don’ts, Straight From a Professional Organizer",
+								"excerpt": "Are you maximizing your doors?",
+								"publisher": "Domino",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/09c8d868-d036-484a-ae2a-57f69a79e4cb.jpeg",
+								"recommendation_id": "d6aee86a-6491-4dd2-a804-cfb2b7b416d1",
+								"score": 1
+							},
+							{
+								"id": 7740689355875075,
+								"url": "https://www.smithsonianmag.com/smart-news/tutankhamuns-iconic-gold-death-mask-is-getting-a-new-home-180986801/?utm_source=firefox-newtab-en-us",
+								"title": "Tutankhamun’s Iconic Gold Death Mask Is Getting a New Home Near the Pyramids of Giza",
+								"excerpt": "Soon, the elaborately decorated artifact will be transferred to the brand new Grand Egyptian Museum, joining more than 5,000 other items from the boy king’s tomb.",
+								"publisher": "Smithsonian Magazine",
+								"raw_image_src": "https://th-thumbnailer.cdn-si-edu.com/46BTGwOlSqZR0VvVEV2XQbp0NGU=/fit-in/1200x0/filters:focal(1431x662:1432x663)/https%3A%2F%2Ftf-cmsv2-smithsonianmag-media.s3.amazonaws.com%2Ffiler_public%2Ff6%2F5f%2Ff65f235b-bf7c-461b-94c4-f83703a4687a%2Fgettyimages-501686984.jpg",
+								"recommendation_id": "2db8435e-4bf7-4273-a3dc-a2cb81d5ec72",
+								"score": 1
+							},
+							{
+								"id": 1853433688215222,
+								"url": "https://getpocket.com/explore/item/the-rise-of-the-recliner-as-a-male-social-space?utm_source=firefox-newtab-en-us",
+								"title": "The Rise of the Recliner as a Male Social Space",
+								"excerpt": "The gendering of spaces changed the way people could relax in their homes.",
+								"publisher": "Scientific American",
+								"raw_image_src": "https://s3.amazonaws.com/pocket-curatedcorpusapi-prod-images/2a214248-e666-48e4-ad6d-881ec7b97aa1.jpeg",
+								"recommendation_id": "bd3985f7-886c-429f-938b-5c0993a6f072",
+								"score": 1
+							},
+							{
+								"id": 5263534914889303,
+								"url": "https://getpocket.com/explore/item/why-religion-is-not-going-away-and-science-will-not-destroy-it?utm_source=firefox-newtab-en-us",
+								"title": "Why Religion Is Not Going Away and Science Will Not Destroy It",
+								"excerpt": "Social scientists predicted that belief in the supernatural would drift away as modern science advanced. They were wrong.",
+								"publisher": "Aeon",
+								"raw_image_src": "https://s3.amazonaws.com/pocket-curatedcorpusapi-prod-images/4648984d-a207-49c9-a673-6d9506e874b2.jpeg",
+								"recommendation_id": "84b61d06-a4ad-4faf-ba30-e5cc53635905",
+								"score": 1
+							},
+							{
+								"id": 4897152512779929,
+								"url": "https://www.vogue.com/article/east-hampton-guide?utm_source=firefox-newtab-en-us",
+								"title": "Vogue’s Guide to East Hampton, America’s Most Luxurious Beach Town",
+								"excerpt": "Here’s where to stay, eat, and shop in East Hampton.",
+								"publisher": "Vogue",
+								"raw_image_src": "https://assets.vogue.com/photos/646fc763e1122c2ab0dca27b/16:9/w_1280,c_limit/637575154",
+								"recommendation_id": "4bd641db-8c97-4eb3-98bd-4b396c4cf94a",
+								"score": 1
+							},
+							{
+								"id": 2189870381161399,
+								"url": "https://getpocket.com/explore/item/as-a-child-of-immigrants-i-feel-guilty-for-embracing-the-minimalist-aesthetic?utm_source=firefox-newtab-en-us",
+								"title": "As a Child of Immigrants, I Feel Guilty for Embracing the Minimalist Aesthetic",
+								"excerpt": "The Mexican-Chinese home I grew up in was filled with expressions of our family’s culture. Now, my bare-bones Brooklyn apartment tells a different story.",
+								"publisher": "Dwell",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/09a33adb-03ca-455f-ad5f-e2f0773d0f0c.jpeg",
+								"recommendation_id": "2ead4362-6d69-4c85-a46f-36abaa139f36",
+								"score": 1
+							},
+							{
+								"id": 7627820218033787,
+								"url": "https://www.kiplinger.com/retirement/retirement-planning/how-millennials-are-ditching-gen-x-retirement-strategies?utm_source=firefox-newtab-en-us",
+								"title": "Beyond 401(K)S: How Millennials Are Ditching Gen X Retirement Strategies. Will It Pay Off?",
+								"excerpt": "Sorry, Gen X, when it comes to saving for retirement, the younger generation views it differently.",
+								"publisher": "Kiplinger",
+								"raw_image_src": "https://cdn.mos.cms.futurecdn.net/PVjjRMZmwwg4p9pXeSEwdf.jpg",
+								"recommendation_id": "4d93bbd2-8a0f-421b-9dea-8f448deafac6",
+								"score": 1
+							},
+							{
+								"id": 7311876440345185,
+								"url": "https://getpocket.com/explore/item/how-to-figure-out-the-next-big-move-in-your-life-journey?utm_source=firefox-newtab-en-us",
+								"title": "How To Figure Out The Next Big Move In Your Life Journey",
+								"excerpt": "Instead of wanting change, you must force change. Then you’ll be on the way to finding your next step.",
+								"publisher": "Darius Foroux",
+								"raw_image_src": "https://s3.amazonaws.com/pocket-curatedcorpusapi-prod-images/61345d18-80e6-4054-bd1a-52f69a989746.png",
+								"recommendation_id": "e4756e8a-9944-4efc-853c-b4157f31f8dc",
+								"score": 1
+							},
+							{
+								"id": 6076196642577733,
+								"url": "https://www.smithsonianmag.com/history/this-exiled-romanov-princess-fled-the-bloodshed-of-the-russian-revolution-and-reinvented-herself-as-a-fashion-icon-180986776/?utm_source=firefox-newtab-en-us",
+								"title": "This Exiled Romanov Princess Fled the Bloodshed of the Russian Revolution and Reinvented Herself As a Fashion Icon",
+								"excerpt": "A new exhibition spotlights Natalia Pavlovna Paley, the granddaughter of a czar. She built a new life for herself in France and the U.S., appearing in films and on the pages of glossy magazines.",
+								"publisher": "Smithsonian Magazine",
+								"raw_image_src": "https://th-thumbnailer.cdn-si-edu.com/mG9iT4wVZRnXdlYIgoMn5EYYjmM=/fit-in/1200x0/filters:focal(750x500:751x501)/https%3A%2F%2Ftf-cmsv2-smithsonianmag-media.s3.amazonaws.com%2Ffiler_public%2F32%2Fd7%2F32d7062e-5b7e-4883-b7ff-6d2e3ca1b612%2Fnatalie-paley.jpg",
+								"recommendation_id": "8dd58fd5-0ea3-4b33-9550-d70fccfc4f09",
+								"score": 1
+							},
+							{
+								"id": 759238550301437,
+								"url": "https://www.harpersbazaar.com/culture/film-tv/a37308445/american-love-story-jfk-jr-carolyn-bessette-kennedy-show/?utm_source=firefox-newtab-en-us",
+								"title": "Everything We Know About ’American Love Story,’ Ryan Murphy’s New Show",
+								"excerpt": "The American Story franchise spinoff will focus on JFK Jr. and Carolyn Bessette Kennedy.",
+								"publisher": "Harper's Bazaar",
+								"raw_image_src": "https://hips.hearstapps.com/hmg-prod/images/snapinsta-to-505999706-18354307051153376-7288938939714748056-n-684c89446ad35.jpg?crop=1.00xw:0.376xh;0,0.149xh&resize=1200:*",
+								"recommendation_id": "4c82514c-5383-42d5-8927-767c5d9d9b64",
+								"score": 1
+							},
+							{
+								"id": 4551451547900146,
+								"url": "https://www.nbcnews.com/tech/innovation/waymo-cars-set-fire-sitting-ducks-la-protests-rcna212426?utm_source=firefox-newtab-en-us",
+								"title": "Why Waymo Cars Became Sitting Ducks During the L.A. Protests",
+								"excerpt": "The autonomous taxis are designed to avoid any possibility of hitting pedestrians. ",
+								"publisher": "NBC News",
+								"raw_image_src": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2025-06/250613-waymo-vandalism-lr-3e07bc.jpg",
+								"recommendation_id": "f785421c-4231-47ae-93c0-6b3afc2fb735",
+								"score": 1
+							},
+							{
+								"id": 6989026508578114,
+								"url": "https://www.inc.com/debra-roberts/emotional-regulation-how-to-keep-your-cool-when-it-counts/91199108?utm_source=firefox-newtab-en-us",
+								"title": "Emotional Regulation: How to Keep Your Cool When It Counts",
+								"excerpt": "Regulating your emotions is key to being effective leader. Emotional intelligence is great—but emotional regulation is even better.",
+								"publisher": "Inc. Magazine",
+								"raw_image_src": "https://img-cdn.inc.com/image/upload/f_webp,q_auto,c_fit/vip/2025/06/emotional-regulation-inc-1511326622.jpg",
+								"recommendation_id": "b3123975-f05d-4c88-938b-7a50816f7ef8",
+								"score": 1
+							},
+							{
+								"id": 7086827506381722,
+								"url": "https://www.fastcompany.com/91350585/how-to-use-ai-to-write-your-resume?utm_source=firefox-newtab-en-us",
+								"title": "How to Use AI to Write Your Résumé",
+								"excerpt": "Experts provide tips on how to use AI to write a resume that helps you stand out and what mistakes to avoid.",
+								"publisher": "Fast Company",
+								"raw_image_src": "https://images.fastcompany.com/image/upload/f_webp,q_auto,c_fit,w_1024,h_1024/wp-cms-2/2025/06/p-91350585-how-to-use-AI-to-write-your-resume.jpg",
+								"recommendation_id": "37703deb-9043-4bce-a810-05ae706b4ec8",
+								"score": 1
+							},
+							{
+								"id": 484827005540509,
+								"url": "https://getpocket.com/explore/item/to-come-up-with-a-good-idea-start-by-imagining-the-worst-idea-possible?utm_source=firefox-newtab-en-us",
+								"title": "To Come Up with a Good Idea, Start by Imagining the Worst Idea Possible",
+								"excerpt": "Working backwards and breaking free from the norm exposes new and unique opportunities you probably haven’t considered.",
+								"publisher": "Harvard Business Review",
+								"raw_image_src": "https://s3.amazonaws.com/pocket-curatedcorpusapi-prod-images/4a9e4454-81a6-4ade-8a1f-ae3f2a45df76.jpeg",
+								"recommendation_id": "86ad10c2-1728-4552-b032-f7b321f44beb",
+								"score": 1
+							},
+							{
+								"id": 4395141789101604,
+								"url": "https://getpocket.com/explore/item/what-i-learned-eating-at-8-000-chinese-restaurants?utm_source=firefox-newtab-en-us",
+								"title": "What I Learned Eating at 8,000 Chinese Restaurants",
+								"excerpt": "Many people in America love Chinese food, but David R Chan is perhaps in a league of his own.",
+								"publisher": "BBC News",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/78f17551-07d6-4ac6-a52a-340be1ee5080.jpeg",
+								"recommendation_id": "f9a01b55-3e39-41f4-bfa6-a7bdbb4d5590",
+								"score": 1
+							},
+							{
+								"id": 8403808910755105,
+								"url": "https://getpocket.com/explore/item/artificial-lives-on-the-occult-origins-of-chemistry-and-the-stuff-of-life?utm_source=firefox-newtab-en-us",
+								"title": "Artificial Lives: On the Occult Origins of Chemistry and the Stuff of Life",
+								"excerpt": "Throughout history, scientists have tried to understand the characteristics that a chemical system must possess in order to be considered living.",
+								"publisher": "MIT Press Reader",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/4107b91e-82d5-419d-ad99-6694cf4f8cd8.jpeg",
+								"recommendation_id": "928ced02-44eb-4fd1-9fb8-a7342e214e40",
+								"score": 1
+							},
+							{
+								"id": 5906270325101943,
+								"url": "https://www.polygon.com/awards/606770/mario-kart-world-goty-game-of-the-year?utm_source=firefox-newtab-en-us",
+								"title": "Mario Kart World Wouldn’t Be in the Running for Game of the Year Even If It Was Perfect",
+								"excerpt": "Nintendo’s Switch 2 launch title hasn’t reviewed quite well enough, but racing games are shut out anyway.",
+								"publisher": "Polygon",
+								"raw_image_src": "https://platform.polygon.com/wp-content/uploads/sites/2/2025/06/NintendoSwitch2_MarioKartWorld_Character_SCRN_25.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C93.077370564282&w=1200",
+								"recommendation_id": "73562e0c-0ebb-407f-b874-52ea32ee7235",
+								"score": 1
+							},
+							{
+								"id": 6276559414122611,
+								"url": "https://www.espn.com/nba/story/_/id/45509753/heart-pearl-11-year-nba-veteran-scot-pollard-emergency-transplant-saved-life?utm_source=firefox-newtab-en-us",
+								"title": "Heart of Pearl: 11-Year NBA Veteran Scot Pollard and the Emergency Transplant That Saved His Life",
+								"excerpt": "Sixteen months ago, Scot Pollard was in active heart failure, about to die. Then came a life-saving transplant, uniting two families -- and two fathers -- forever.",
+								"publisher": "ESPN",
+								"raw_image_src": "https://a.espncdn.com/combiner/i?img=%2Fphoto%2F2025%2F0614%2Fr1506440_1296x729_16%2D9.jpg",
+								"recommendation_id": "131927f5-67fc-45c8-ae0e-6734c67281e9",
+								"score": 1
+							}
+						],
+						"status": "success"
+					}
+				}
+			},
+			"loaded": true
+		},
+		"spocs": {
+			"spocs_endpoint": "https://spocs.getpocket.com/spocs",
+			"lastUpdated": 1750098911563,
+			"data": {
+				"settings": {
+					"feature_flags": {
+						"collections": false,
+						"spoc_v2": true
+					},
+					"spocsPerNewTabs": 1,
+					"domainAffinityParameterSets": {
+						"default": {
+							"combinedDomainFactor": 0.5,
+							"frequencyFactor": 0.5,
+							"itemScoreFactor": 1,
+							"multiDomainBoost": 0,
+							"perfectCombinedDomainScore": 2,
+							"perfectFrequencyVisits": 10,
+							"recencyFactor": 0.5
+						},
+						"fully-personalized": {
+							"combinedDomainFactor": 0.5,
+							"frequencyFactor": 0.5,
+							"itemScoreFactor": 0.01,
+							"multiDomainBoost": 0,
+							"perfectCombinedDomainScore": 2,
+							"perfectFrequencyVisits": 10,
+							"recencyFactor": 0.5
+						},
+						"fully-personalized-domains": {
+							"combinedDomainFactor": 0.5,
+							"frequencyFactor": 0.5,
+							"itemScoreFactor": 0.01,
+							"multiDomainBoost": 0,
+							"perfectCombinedDomainScore": 10,
+							"perfectFrequencyVisits": 1,
+							"recencyFactor": 0.5
+						}
+					},
+					"timeSegments": [
+						{
+							"id": "week-1",
+							"startTime": 432000,
+							"endTime": 0,
+							"weightPosition": 1
+						},
+						{
+							"id": "week-2",
+							"startTime": 864000,
+							"endTime": 432000,
+							"weightPosition": 1
+						},
+						{
+							"id": "week-3",
+							"startTime": 1296000,
+							"endTime": 864000,
+							"weightPosition": 1
+						},
+						{
+							"id": "week-4",
+							"startTime": 1728000,
+							"endTime": 1296000,
+							"weightPosition": 1
+						},
+						{
+							"id": "week-5",
+							"startTime": 2160000,
+							"endTime": 1728000,
+							"weightPosition": 1
+						},
+						{
+							"id": "week-6",
+							"startTime": 2592000,
+							"endTime": 2160000,
+							"weightPosition": 1
+						}
+					]
+				},
+				"spocs": {
+					"title": "",
+					"context": "",
+					"sponsor": "",
+					"personalized": false,
+					"items": [
+						{
+							"id": 900544465,
+							"flight_id": 836803701,
+							"campaign_id": 59140872,
+							"title": "2 Cards Now Charging 0% Intro Rates ​Until ​N​early 2027",
+							"url": "https://secure.creditmaven.com/50/14915?campaign=FF-SOV03-CompareCredit-Broad&creative=GoldCardCrystals-2CardsNowCharging0IntroRatesUntilNEarly2027-20250611",
+							"domain": "comparecredit.com",
+							"excerpt": "",
+							"priority": 3,
+							"context": "Sponsored by CompareCredit™",
+							"raw_image_src": "https://s.zkcdn.net/Advertisers/eea832605fab4884b08ed6fa0c5dc2c1.png",
+							"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Feea832605fab4884b08ed6fa0c5dc2c1.png&resize=w618-h310",
+							"shim": {
+								"impression": "1,eyJ2IjoiMS4xMyIsImF2IjoxOTc1NTY3LCJhdCI6MzYxNywiYnQiOjAsImNtIjo1OTE0MDg3MiwiY2giOjM2ODQ4LCJjayI6e30sImNyIjo3MjYyNTQ3OTUsImRpIjoiYmI4MTBjYTJiYTlmNDQyYmE2ODU3OGM1NGRjMTI1NGMiLCJkaiI6MCwiaWkiOiI5NDIyMTM2MGYwYTE0NTU2OTIzNjRkODcyOTU2ZjM1YiIsImRtIjozLCJmYyI6OTAwNTQ0NDY1LCJmbCI6ODM2ODAzNzAxLCJpcCI6IjM0LjE2OC4xOTIuMjEzIiwia3ciOiJ1cyx1cy1tZSIsIm1rIjoidXMiLCJudyI6MTAyNTAsInBjIjowLjcsIm9wIjowLjcsIm1wIjowLjcsImVjIjowLCJnbSI6MCwiZXAiOm51bGwsInByIjoxNDc1MTgsInJ0IjoyLCJycyI6NTAwLCJzYSI6Ijk2Iiwic2IiOiJpLTA3NjZmODY1NDM2NDZkMjkwIiwic3AiOjczNzk3NSwic3QiOjEwNzAwOTgsInVrIjoiezFiYzg5OGNkLWVmZTItNGFlOS05NmY4LTM1NjMxNmMwZDEyNH0iLCJ6biI6MjE3NzU4LCJ6bSI6WzIxNzk5NV0sInRzIjoxNzUwMDk4OTEwOTgyLCJwbiI6InNwb2NzIiwiZ2MiOnRydWUsImdDIjp0cnVlLCJncyI6Im5vbmUiLCJkYyI6MSwidHoiOiJVVEMiLCJiYSI6MSwiZnEiOjF9,aENKEx_ShanH-ultJdhLi4okYdM",
+								"click": "0,eyJ2IjoiMS4xMyIsImF2IjoxOTc1NTY3LCJhdCI6MzYxNywiYnQiOjAsImNtIjo1OTE0MDg3MiwiY2giOjM2ODQ4LCJjayI6e30sImNyIjo3MjYyNTQ3OTUsImRpIjoiYmI4MTBjYTJiYTlmNDQyYmE2ODU3OGM1NGRjMTI1NGMiLCJkaiI6MCwiaWkiOiI5NDIyMTM2MGYwYTE0NTU2OTIzNjRkODcyOTU2ZjM1YiIsImRtIjozLCJmYyI6OTAwNTQ0NDY1LCJmbCI6ODM2ODAzNzAxLCJpcCI6IjM0LjE2OC4xOTIuMjEzIiwia3ciOiJ1cyx1cy1tZSIsIm1rIjoidXMiLCJudyI6MTAyNTAsInBjIjowLjcsIm9wIjowLjcsIm1wIjowLjcsImVjIjowLCJnbSI6MCwiZXAiOm51bGwsInByIjoxNDc1MTgsInJ0IjoyLCJycyI6NTAwLCJzYSI6Ijk2Iiwic2IiOiJpLTA3NjZmODY1NDM2NDZkMjkwIiwic3AiOjczNzk3NSwic3QiOjEwNzAwOTgsInVrIjoiezFiYzg5OGNkLWVmZTItNGFlOS05NmY4LTM1NjMxNmMwZDEyNH0iLCJ6biI6MjE3NzU4LCJ6bSI6WzIxNzk5NV0sInRzIjoxNzUwMDk4OTEwOTgyLCJwbiI6InNwb2NzIiwiZ2MiOnRydWUsImdDIjp0cnVlLCJncyI6Im5vbmUiLCJkYyI6MSwidHoiOiJVVEMiLCJ1ciI6bnVsbH0,Vq25pgWw_NXSx6ujhDv0RK5gcmc",
+								"delete": "",
+								"save": ""
+							},
+							"parameter_set": "default",
+							"caps": {
+								"lifetime": 50,
+								"campaign": {
+									"count": 10,
+									"period": 86400
+								},
+								"flight": {
+									"count": 10,
+									"period": 86400
+								}
+							},
+							"domain_affinities": {},
+							"personalization_models": {
+								"arts_and_entertainment": 1,
+								"autos_and_vehicles": 1,
+								"beauty_and_fitness": 1,
+								"blogging_resources_and_services": 1,
+								"books_and_literature": 1,
+								"business_and_industrial": 1,
+								"computers_and_electronics": 1,
+								"finance": 1,
+								"food_and_drink": 1,
+								"games": 1,
+								"health": 1,
+								"hobbies_and_leisure": 1,
+								"home_and_garden": 1,
+								"internet_and_telecom": 1,
+								"jobs_and_education": 1,
+								"law_and_government": 1,
+								"online_communities": 1,
+								"people_and_society": 1,
+								"pets_and_animals": 1,
+								"real_estate": 1,
+								"reference": 1,
+								"science": 1,
+								"shopping": 1,
+								"sports": 1,
+								"travel": 1
+							},
+							"min_score": 0.1,
+							"item_score": 0.2,
+							"sponsor": "CompareCredit™",
+							"fetchTimestamp": 1750098911563,
+							"score": 0.2
+						},
+						{
+							"id": 889790303,
+							"flight_id": 837098718,
+							"campaign_id": 1190428,
+							"title": "HelloFresh: Get 10 Free Meals + Free Shipping on your First Box",
+							"url": "https://i.geistm.com/l/HF_BTS_PKTDTS_LP?c=10FMPOCKET-001&mealsize=3-2&utm_source=pocket~geistm&utm_medium=cpc&utm_campaign=geist_pocket&discount_comm_id=4a8baf67-7b32-4d03-86ad-53eafe280047&utm_content=act_native_nonmetanative&utm_term=GeistM_HF_PKT_DTS_Popdust_ABO_Purchase_1DC_PS_BAU25_A_All_RON_C22",
+							"domain": "hellofresh.com",
+							"excerpt": "Use code 10FMPOCKET-001 for 10 Free HelloFresh Meals today",
+							"priority": 9,
+							"context": "Sponsored by HelloFresh",
+							"raw_image_src": "https://s.zkcdn.net/Advertisers/d15d296bf8d4411ca3f239ce44d281e3.jpg",
+							"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Fd15d296bf8d4411ca3f239ce44d281e3.jpg&resize=w618-h310",
+							"shim": {
+								"impression": "1,eyJ2IjoiMS4xMyIsImF2Ijo1MjQ1MzQsImF0IjozNjE3LCJidCI6MCwiY20iOjExOTA0MjgsImNoIjozNjg0OCwiY2siOnt9LCJjciI6NzA0OTU0NTY0LCJkaSI6ImJiODEwY2EyYmE5ZjQ0MmJhNjg1NzhjNTRkYzEyNTRjIiwiZGoiOjEsImlpIjoiYjIzMjg5ZTI5ZDQzNGJkZjhjZTM3MWUyNzQ4NmMzNTMiLCJkbSI6MywiZmMiOjg4OTc5MDMwMywiZmwiOjgzNzA5ODcxOCwiaXAiOiIzNC4xNjguMTkyLjIxMyIsImt3IjoidXMsdXMtbWUiLCJtayI6InVzIiwibnciOjEwMjUwLCJwYyI6MC4zLCJvcCI6MC4zLCJtcCI6MC4zLCJlYyI6MCwiZ20iOjAsImVwIjpudWxsLCJwciI6MjU0NjQ4LCJydCI6MiwicnMiOjUwMCwic2EiOiI5NiIsInNiIjoiaS0wNzY2Zjg2NTQzNjQ2ZDI5MCIsInNwIjo3Mzc5NzUsInN0IjoxMDcwMDk4LCJ1ayI6InsxYmM4OThjZC1lZmUyLTRhZTktOTZmOC0zNTYzMTZjMGQxMjR9Iiwiem4iOjIxNzc1OCwiem0iOlsyMTc5OTVdLCJ0cyI6MTc1MDA5ODkxMDk4MywicG4iOiJzcG9jcyIsImdjIjp0cnVlLCJnQyI6dHJ1ZSwiZ3MiOiJub25lIiwiZGMiOjEsInR6IjoiVVRDIiwiYmEiOjEsImZxIjoxfQ,N9mpwM2a0QVmMftPluA-gTaOawI",
+								"click": "0,eyJ2IjoiMS4xMyIsImF2Ijo1MjQ1MzQsImF0IjozNjE3LCJidCI6MCwiY20iOjExOTA0MjgsImNoIjozNjg0OCwiY2siOnt9LCJjciI6NzA0OTU0NTY0LCJkaSI6ImJiODEwY2EyYmE5ZjQ0MmJhNjg1NzhjNTRkYzEyNTRjIiwiZGoiOjEsImlpIjoiYjIzMjg5ZTI5ZDQzNGJkZjhjZTM3MWUyNzQ4NmMzNTMiLCJkbSI6MywiZmMiOjg4OTc5MDMwMywiZmwiOjgzNzA5ODcxOCwiaXAiOiIzNC4xNjguMTkyLjIxMyIsImt3IjoidXMsdXMtbWUiLCJtayI6InVzIiwibnciOjEwMjUwLCJwYyI6MC4zLCJvcCI6MC4zLCJtcCI6MC4zLCJlYyI6MCwiZ20iOjAsImVwIjpudWxsLCJwciI6MjU0NjQ4LCJydCI6MiwicnMiOjUwMCwic2EiOiI5NiIsInNiIjoiaS0wNzY2Zjg2NTQzNjQ2ZDI5MCIsInNwIjo3Mzc5NzUsInN0IjoxMDcwMDk4LCJ1ayI6InsxYmM4OThjZC1lZmUyLTRhZTktOTZmOC0zNTYzMTZjMGQxMjR9Iiwiem4iOjIxNzc1OCwiem0iOlsyMTc5OTVdLCJ0cyI6MTc1MDA5ODkxMDk4MywicG4iOiJzcG9jcyIsImdjIjp0cnVlLCJnQyI6dHJ1ZSwiZ3MiOiJub25lIiwiZGMiOjEsInR6IjoiVVRDIiwidXIiOm51bGx9,D6nM31rQagJJ6n72JNxwMse_eEg",
+								"delete": "",
+								"save": ""
+							},
+							"parameter_set": "default",
+							"caps": {
+								"lifetime": 50,
+								"campaign": {
+									"count": 10,
+									"period": 86400
+								},
+								"flight": {
+									"count": 10,
+									"period": 86400
+								}
+							},
+							"domain_affinities": {},
+							"personalization_models": {},
+							"min_score": 0.1,
+							"item_score": 0.2,
+							"sponsor": "HelloFresh",
+							"fetchTimestamp": 1750098911563,
+							"score": 0.2
+						},
+						{
+							"id": 903685252,
+							"flight_id": 836822068,
+							"campaign_id": 58445949,
+							"title": "Have More Than $1,000? Here Is How You Can Turn That to $10K",
+							"url": "https://partners.thepennyhoarder.com/1000-checking-ff-prt/?aff_id=342&utm_source=firefox&utm_medium=paidnative&aff_sub3=1000-checking-money-roll",
+							"domain": "thepennyhoarder.com",
+							"excerpt": "Money made easy.",
+							"priority": 9,
+							"context": "Sponsored by The Penny Hoarder",
+							"raw_image_src": "https://s.zkcdn.net/Advertisers/a70b9b0b08db416285babd0c9b4550cb.jpg",
+							"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Fa70b9b0b08db416285babd0c9b4550cb.jpg&resize=w618-h310",
+							"shim": {
+								"impression": "1,eyJ2IjoiMS4xMyIsImF2IjoxOTcyNTA1LCJhdCI6MzYxNywiYnQiOjAsImNtIjo1ODQ0NTk0OSwiY2giOjM2ODQ4LCJjayI6e30sImNyIjo3MjkzOTQ4ODEsImRpIjoiYmI4MTBjYTJiYTlmNDQyYmE2ODU3OGM1NGRjMTI1NGMiLCJkaiI6MiwiaWkiOiJlYjUxOGQwNzA5NzI0YzIyOGZiNzIzY2ExMTllN2FhNSIsImRtIjozLCJmYyI6OTAzNjg1MjUyLCJmbCI6ODM2ODIyMDY4LCJpcCI6IjM0LjE2OC4xOTIuMjEzIiwia3ciOiJ1cyx1cy1tZSIsIm1rIjoidXMiLCJudyI6MTAyNTAsInBjIjowLjYsIm9wIjowLjYsIm1wIjowLjYsImVjIjowLCJnbSI6MCwiZXAiOm51bGwsInByIjoyNTQ2NDgsInJ0IjoyLCJycyI6NTAwLCJzYSI6Ijk2Iiwic2IiOiJpLTA3NjZmODY1NDM2NDZkMjkwIiwic3AiOjczNzk3NSwic3QiOjEwNzAwOTgsInRyIjp0cnVlLCJ1ayI6InsxYmM4OThjZC1lZmUyLTRhZTktOTZmOC0zNTYzMTZjMGQxMjR9Iiwiem4iOjIxNzc1OCwiem0iOlsyMTc5OTVdLCJ0cyI6MTc1MDA5ODkxMDk4MywicG4iOiJzcG9jcyIsImdjIjp0cnVlLCJnQyI6dHJ1ZSwiZ3MiOiJub25lIiwiZGMiOjEsInR6IjoiVVRDIiwiYmEiOjEsImZxIjoxfQ,LWQptVJts3X-firDFTXGfMZSxFI",
+								"click": "0,eyJ2IjoiMS4xMyIsImF2IjoxOTcyNTA1LCJhdCI6MzYxNywiYnQiOjAsImNtIjo1ODQ0NTk0OSwiY2giOjM2ODQ4LCJjayI6e30sImNyIjo3MjkzOTQ4ODEsImRpIjoiYmI4MTBjYTJiYTlmNDQyYmE2ODU3OGM1NGRjMTI1NGMiLCJkaiI6MiwiaWkiOiJlYjUxOGQwNzA5NzI0YzIyOGZiNzIzY2ExMTllN2FhNSIsImRtIjozLCJmYyI6OTAzNjg1MjUyLCJmbCI6ODM2ODIyMDY4LCJpcCI6IjM0LjE2OC4xOTIuMjEzIiwia3ciOiJ1cyx1cy1tZSIsIm1rIjoidXMiLCJudyI6MTAyNTAsInBjIjowLjYsIm9wIjowLjYsIm1wIjowLjYsImVjIjowLCJnbSI6MCwiZXAiOm51bGwsInByIjoyNTQ2NDgsInJ0IjoyLCJycyI6NTAwLCJzYSI6Ijk2Iiwic2IiOiJpLTA3NjZmODY1NDM2NDZkMjkwIiwic3AiOjczNzk3NSwic3QiOjEwNzAwOTgsInRyIjp0cnVlLCJ1ayI6InsxYmM4OThjZC1lZmUyLTRhZTktOTZmOC0zNTYzMTZjMGQxMjR9Iiwiem4iOjIxNzc1OCwiem0iOlsyMTc5OTVdLCJ0cyI6MTc1MDA5ODkxMDk4MywicG4iOiJzcG9jcyIsImdjIjp0cnVlLCJnQyI6dHJ1ZSwiZ3MiOiJub25lIiwiZGMiOjEsInR6IjoiVVRDIiwidXIiOm51bGx9,nJaHvovjQgiZ9f3y9LFCVg8QufE",
+								"delete": "",
+								"save": ""
+							},
+							"parameter_set": "default",
+							"caps": {
+								"lifetime": 50,
+								"campaign": {
+									"count": 10,
+									"period": 86400
+								},
+								"flight": {
+									"count": 10,
+									"period": 86400
+								}
+							},
+							"domain_affinities": {},
+							"personalization_models": {},
+							"min_score": 0.1,
+							"item_score": 0.2,
+							"sponsor": "The Penny Hoarder",
+							"fetchTimestamp": 1750098911563,
+							"score": 0.2
+						},
+						{
+							"id": 889788198,
+							"flight_id": 837096578,
+							"campaign_id": 6137120,
+							"title": "Click Here For 50% Off Your First Box and 20% off Your Next Month",
+							"url": "https://i.geistm.com/l/FJ_BAU_PKTDTS_LP?c=50GEIST-023&mealsize=1-8&discount_comm_id=7267f20b-a39f-4440-9ca2-1404329a2b84&utm_source=pocket~geistm&utm_medium=cpc&utm_campaign=geistm~pocket&vs_campaign_id=7d2433f7-209e-4aac-b3fe-b63e2caf53e0&utm_content=act_native_nonmetanative&utm_term=GeistM_FJ_PKT_DTS_Popdust_ABO_Purchase_1DC_PS_Evergreen_A_All_RON_PostItNote2",
+							"domain": "factor75.com",
+							"excerpt": "Use code 50GEIST-023 for 50% Factor today",
+							"priority": 9,
+							"context": "Sponsored by Factor",
+							"raw_image_src": "https://s.zkcdn.net/Advertisers/8ad0b368de7d4e04ab9fee2923f886fd.jpg",
+							"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F8ad0b368de7d4e04ab9fee2923f886fd.jpg&resize=w618-h310",
+							"shim": {
+								"impression": "1,eyJ2IjoiMS4xMyIsImF2IjoxMzIzOTQzLCJhdCI6MzYxNywiYnQiOjAsImNtIjo2MTM3MTIwLCJjaCI6MzY4NDgsImNrIjp7fSwiY3IiOjcxNDk0MjAzNCwiZGkiOiJiYjgxMGNhMmJhOWY0NDJiYTY4NTc4YzU0ZGMxMjU0YyIsImRqIjozLCJpaSI6Ijc4NjU4ZTI5YzgyNjQ1NzI4MjYxODM4NmY1MWMzNmRkIiwiZG0iOjMsImZjIjo4ODk3ODgxOTgsImZsIjo4MzcwOTY1NzgsImlwIjoiMzQuMTY4LjE5Mi4yMTMiLCJrdyI6InVzLHVzLW1lIiwibWsiOiJ1cyIsIm53IjoxMDI1MCwicGMiOjAuMywib3AiOjAuMywibXAiOjAuMywiZWMiOjAsImdtIjowLCJlcCI6bnVsbCwicHIiOjI1NDY0OCwicnQiOjIsInJzIjo1MDAsInNhIjoiOTYiLCJzYiI6ImktMDc2NmY4NjU0MzY0NmQyOTAiLCJzcCI6NzM3OTc1LCJzdCI6MTA3MDA5OCwidWsiOiJ7MWJjODk4Y2QtZWZlMi00YWU5LTk2ZjgtMzU2MzE2YzBkMTI0fSIsInpuIjoyMTc3NTgsInptIjpbMjE3OTk1XSwidHMiOjE3NTAwOTg5MTA5ODQsInBuIjoic3BvY3MiLCJnYyI6dHJ1ZSwiZ0MiOnRydWUsImdzIjoibm9uZSIsImRjIjoxLCJ0eiI6IlVUQyIsImJhIjoxLCJmcSI6MX0,c44-6ZdkWO2lXTbXd9dXmul_rkc",
+								"click": "0,eyJ2IjoiMS4xMyIsImF2IjoxMzIzOTQzLCJhdCI6MzYxNywiYnQiOjAsImNtIjo2MTM3MTIwLCJjaCI6MzY4NDgsImNrIjp7fSwiY3IiOjcxNDk0MjAzNCwiZGkiOiJiYjgxMGNhMmJhOWY0NDJiYTY4NTc4YzU0ZGMxMjU0YyIsImRqIjozLCJpaSI6Ijc4NjU4ZTI5YzgyNjQ1NzI4MjYxODM4NmY1MWMzNmRkIiwiZG0iOjMsImZjIjo4ODk3ODgxOTgsImZsIjo4MzcwOTY1NzgsImlwIjoiMzQuMTY4LjE5Mi4yMTMiLCJrdyI6InVzLHVzLW1lIiwibWsiOiJ1cyIsIm53IjoxMDI1MCwicGMiOjAuMywib3AiOjAuMywibXAiOjAuMywiZWMiOjAsImdtIjowLCJlcCI6bnVsbCwicHIiOjI1NDY0OCwicnQiOjIsInJzIjo1MDAsInNhIjoiOTYiLCJzYiI6ImktMDc2NmY4NjU0MzY0NmQyOTAiLCJzcCI6NzM3OTc1LCJzdCI6MTA3MDA5OCwidWsiOiJ7MWJjODk4Y2QtZWZlMi00YWU5LTk2ZjgtMzU2MzE2YzBkMTI0fSIsInpuIjoyMTc3NTgsInptIjpbMjE3OTk1XSwidHMiOjE3NTAwOTg5MTA5ODMsInBuIjoic3BvY3MiLCJnYyI6dHJ1ZSwiZ0MiOnRydWUsImdzIjoibm9uZSIsImRjIjoxLCJ0eiI6IlVUQyIsInVyIjpudWxsfQ,5qGDF7KSpKmE355DVxCrweCTF7w",
+								"delete": "",
+								"save": ""
+							},
+							"parameter_set": "default",
+							"caps": {
+								"lifetime": 50,
+								"campaign": {
+									"count": 10,
+									"period": 86400
+								},
+								"flight": {
+									"count": 10,
+									"period": 86400
+								}
+							},
+							"domain_affinities": {},
+							"personalization_models": {},
+							"min_score": 0.1,
+							"item_score": 0.2,
+							"sponsor": "Factor",
+							"fetchTimestamp": 1750098911563,
+							"score": 0.2
+						},
+						{
+							"id": 905979387,
+							"flight_id": 836822069,
+							"campaign_id": 1497187,
+							"title": "Study: People With Much Saved Feel Happiest",
+							"url": "https://insights.smartasset.com/fahappiness?utm_source=pocket&utm_campaign=poc__falc_content_fahappiness&utm_content=fahappiness_grey",
+							"domain": "smartasset.com",
+							"excerpt": "",
+							"priority": 9,
+							"context": "Sponsored by SmartAsset",
+							"raw_image_src": "https://s.zkcdn.net/Advertisers/603a8b0e962f4dc8be2da4135f603321.jpg",
+							"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F603a8b0e962f4dc8be2da4135f603321.jpg&resize=w618-h310",
+							"shim": {
+								"impression": "1,eyJ2IjoiMS4xMyIsImF2Ijo3ODk0NDUsImF0IjozNjE3LCJidCI6MCwiY20iOjE0OTcxODcsImNoIjozNjg0OCwiY2siOnt9LCJjciI6NzMwMTA4Nzk5LCJkaSI6ImJiODEwY2EyYmE5ZjQ0MmJhNjg1NzhjNTRkYzEyNTRjIiwiZGoiOjQsImlpIjoiZWRkOWIwZmZkZGY0NDY1YThjZDQ4YTBlY2Q3NzRiZmIiLCJkbSI6MywiZmMiOjkwNTk3OTM4NywiZmwiOjgzNjgyMjA2OSwiaXAiOiIzNC4xNjguMTkyLjIxMyIsImt3IjoidXMsdXMtbWUiLCJtayI6InVzIiwibnciOjEwMjUwLCJwYyI6MC42NSwib3AiOjAuNjUsIm1wIjowLjY1LCJlYyI6MCwiZ20iOjAsImVwIjpudWxsLCJwciI6MjU0NjQ4LCJydCI6MiwicnMiOjUwMCwic2EiOiI5NiIsInNiIjoiaS0wNzY2Zjg2NTQzNjQ2ZDI5MCIsInNwIjo3Mzc5NzUsInN0IjoxMDcwMDk4LCJ1ayI6InsxYmM4OThjZC1lZmUyLTRhZTktOTZmOC0zNTYzMTZjMGQxMjR9Iiwiem4iOjIxNzc1OCwiem0iOlsyMTc5OTVdLCJ0cyI6MTc1MDA5ODkxMDk4NCwicG4iOiJzcG9jcyIsImdjIjp0cnVlLCJnQyI6dHJ1ZSwiZ3MiOiJub25lIiwiZGMiOjEsInR6IjoiVVRDIiwiYmEiOjEsImZxIjoxfQ,alZbR-TVW3EyD4ytmINq2Ve58b8",
+								"click": "0,eyJ2IjoiMS4xMyIsImF2Ijo3ODk0NDUsImF0IjozNjE3LCJidCI6MCwiY20iOjE0OTcxODcsImNoIjozNjg0OCwiY2siOnt9LCJjciI6NzMwMTA4Nzk5LCJkaSI6ImJiODEwY2EyYmE5ZjQ0MmJhNjg1NzhjNTRkYzEyNTRjIiwiZGoiOjQsImlpIjoiZWRkOWIwZmZkZGY0NDY1YThjZDQ4YTBlY2Q3NzRiZmIiLCJkbSI6MywiZmMiOjkwNTk3OTM4NywiZmwiOjgzNjgyMjA2OSwiaXAiOiIzNC4xNjguMTkyLjIxMyIsImt3IjoidXMsdXMtbWUiLCJtayI6InVzIiwibnciOjEwMjUwLCJwYyI6MC42NSwib3AiOjAuNjUsIm1wIjowLjY1LCJlYyI6MCwiZ20iOjAsImVwIjpudWxsLCJwciI6MjU0NjQ4LCJydCI6MiwicnMiOjUwMCwic2EiOiI5NiIsInNiIjoiaS0wNzY2Zjg2NTQzNjQ2ZDI5MCIsInNwIjo3Mzc5NzUsInN0IjoxMDcwMDk4LCJ1ayI6InsxYmM4OThjZC1lZmUyLTRhZTktOTZmOC0zNTYzMTZjMGQxMjR9Iiwiem4iOjIxNzc1OCwiem0iOlsyMTc5OTVdLCJ0cyI6MTc1MDA5ODkxMDk4NCwicG4iOiJzcG9jcyIsImdjIjp0cnVlLCJnQyI6dHJ1ZSwiZ3MiOiJub25lIiwiZGMiOjEsInR6IjoiVVRDIiwidXIiOm51bGx9,CYWNhHnhhwGRcPLFuSJfc9J6E64",
+								"delete": "",
+								"save": ""
+							},
+							"parameter_set": "default",
+							"caps": {
+								"lifetime": 50,
+								"campaign": {
+									"count": 10,
+									"period": 86400
+								},
+								"flight": {
+									"count": 10,
+									"period": 86400
+								}
+							},
+							"domain_affinities": {},
+							"personalization_models": {},
+							"min_score": 0.1,
+							"item_score": 0.2,
+							"sponsor": "SmartAsset",
+							"fetchTimestamp": 1750098911563,
+							"score": 0.2
+						},
+						{
+							"id": 889219099,
+							"flight_id": 836799654,
+							"campaign_id": 8703217,
+							"title": "Maine: Gov. Will Give You Back Up To $30,000 Credit To Install Solar In These Zip Codes",
+							"url": "https://www.energybillcruncher.com/pa/?tg_ref=dec24&camp_id=ME_flag2&keyword=30k&sub2=iypao99mpaoahrd",
+							"domain": "energybillcruncher.com",
+							"excerpt": "If you pay over $99/month for electricity & own your home, you'll probably qualify for this.",
+							"priority": 9,
+							"context": "Sponsored by EnergyBillCruncher",
+							"raw_image_src": "https://s.zkcdn.net/Advertisers/8927bbfae6b74291869aa48b37c71a59.png",
+							"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F8927bbfae6b74291869aa48b37c71a59.png&resize=w618-h310",
+							"shim": {
+								"impression": "1,eyJ2IjoiMS4xMyIsImF2IjoxNTA2NjU5LCJhdCI6MzYxNywiYnQiOjAsImNtIjo4NzAzMjE3LCJjaCI6MzY4NDgsImNrIjp7fSwiY3IiOjUzMzk3NDUxMiwiZGkiOiJiYjgxMGNhMmJhOWY0NDJiYTY4NTc4YzU0ZGMxMjU0YyIsImRqIjo1LCJpaSI6IjExYzFkMjlhOTAxNjQyNTk4YjVhODU0M2I5NjE2ZjI3IiwiZG0iOjMsImZjIjo4ODkyMTkwOTksImZsIjo4MzY3OTk2NTQsImlwIjoiMzQuMTY4LjE5Mi4yMTMiLCJrdyI6InVzLHVzLW1lIiwibWsiOiJ1cy1tZSIsIm53IjoxMDI1MCwicGMiOjAuMjgsIm9wIjowLjI4LCJtcCI6MC4yOCwiZWMiOjAsImdtIjowLCJlcCI6bnVsbCwicHIiOjI1NDY0OCwicnQiOjIsInJzIjo1MDAsInNhIjoiOTYiLCJzYiI6ImktMDc2NmY4NjU0MzY0NmQyOTAiLCJzcCI6NzM3OTc1LCJzdCI6MTA3MDA5OCwidWsiOiJ7MWJjODk4Y2QtZWZlMi00YWU5LTk2ZjgtMzU2MzE2YzBkMTI0fSIsInpuIjoyMTc3NTgsInptIjpbMjE3OTk1XSwidHMiOjE3NTAwOTg5MTA5ODUsInBuIjoic3BvY3MiLCJnYyI6dHJ1ZSwiZ0MiOnRydWUsImdzIjoibm9uZSIsImRjIjoxLCJ0eiI6IlVUQyIsImJhIjoxLCJmcSI6MX0,RYLmCUvlooIpGiZeBWpseCGbzw4",
+								"click": "0,eyJ2IjoiMS4xMyIsImF2IjoxNTA2NjU5LCJhdCI6MzYxNywiYnQiOjAsImNtIjo4NzAzMjE3LCJjaCI6MzY4NDgsImNrIjp7fSwiY3IiOjUzMzk3NDUxMiwiZGkiOiJiYjgxMGNhMmJhOWY0NDJiYTY4NTc4YzU0ZGMxMjU0YyIsImRqIjo1LCJpaSI6IjExYzFkMjlhOTAxNjQyNTk4YjVhODU0M2I5NjE2ZjI3IiwiZG0iOjMsImZjIjo4ODkyMTkwOTksImZsIjo4MzY3OTk2NTQsImlwIjoiMzQuMTY4LjE5Mi4yMTMiLCJrdyI6InVzLHVzLW1lIiwibWsiOiJ1cy1tZSIsIm53IjoxMDI1MCwicGMiOjAuMjgsIm9wIjowLjI4LCJtcCI6MC4yOCwiZWMiOjAsImdtIjowLCJlcCI6bnVsbCwicHIiOjI1NDY0OCwicnQiOjIsInJzIjo1MDAsInNhIjoiOTYiLCJzYiI6ImktMDc2NmY4NjU0MzY0NmQyOTAiLCJzcCI6NzM3OTc1LCJzdCI6MTA3MDA5OCwidWsiOiJ7MWJjODk4Y2QtZWZlMi00YWU5LTk2ZjgtMzU2MzE2YzBkMTI0fSIsInpuIjoyMTc3NTgsInptIjpbMjE3OTk1XSwidHMiOjE3NTAwOTg5MTA5ODQsInBuIjoic3BvY3MiLCJnYyI6dHJ1ZSwiZ0MiOnRydWUsImdzIjoibm9uZSIsImRjIjoxLCJ0eiI6IlVUQyIsInVyIjpudWxsfQ,K9gqNMM3ROCf8CIaxzAQljhF_hA",
+								"delete": "",
+								"save": ""
+							},
+							"parameter_set": "default",
+							"caps": {
+								"lifetime": 50,
+								"campaign": {
+									"count": 10,
+									"period": 86400
+								},
+								"flight": {
+									"count": 10,
+									"period": 86400
+								}
+							},
+							"domain_affinities": {},
+							"personalization_models": {
+								"arts_and_entertainment": 1,
+								"autos_and_vehicles": 1,
+								"beauty_and_fitness": 1,
+								"blogging_resources_and_services": 1,
+								"books_and_literature": 1,
+								"business_and_industrial": 1,
+								"computers_and_electronics": 1,
+								"finance": 1,
+								"food_and_drink": 1,
+								"games": 1,
+								"health": 1,
+								"hobbies_and_leisure": 1,
+								"home_and_garden": 1,
+								"internet_and_telecom": 1,
+								"jobs_and_education": 1,
+								"law_and_government": 1,
+								"online_communities": 1,
+								"people_and_society": 1,
+								"pets_and_animals": 1,
+								"real_estate": 1,
+								"reference": 1,
+								"science": 1,
+								"shopping": 1,
+								"sports": 1,
+								"travel": 1
+							},
+							"min_score": 0.1,
+							"item_score": 0.2,
+							"sponsor": "EnergyBillCruncher",
+							"fetchTimestamp": 1750098911563,
+							"score": 0.2
+						},
+						{
+							"id": 889215164,
+							"flight_id": 836798118,
+							"campaign_id": 121753041,
+							"title": "Audiologists Tested 17 Hearing Aids. Here's What They Found",
+							"url": "https://www.hear.com/d/best_hearing_aids_dis08/?act=ACT0000084053ACT&utm_source=mozilla&utm_medium=direct-buy&utm_campaign=us_en_al_hea_directbuy_mozilla_hea-lightbulb-double_acq_desktop_tb610615-tb10614_audiologist17_ACT0000084053ACT",
+							"domain": "hear.com",
+							"excerpt": "A breakthrough in hearing technology is finally available in the US. Take an exclusive look.",
+							"priority": 9,
+							"context": "Sponsored by hear.com",
+							"raw_image_src": "https://s.zkcdn.net/Advertisers/8914cd321dcf489fac824a1e918609ff.png",
+							"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F8914cd321dcf489fac824a1e918609ff.png&resize=w618-h310",
+							"shim": {
+								"impression": "1,eyJ2IjoiMS4xMyIsImF2IjoyMjE5OTgyLCJhdCI6MzYxNywiYnQiOjAsImNtIjoxMjE3NTMwNDEsImNoIjozNjg0OCwiY2siOnt9LCJjciI6NzA3ODExNDgxLCJkaSI6ImJiODEwY2EyYmE5ZjQ0MmJhNjg1NzhjNTRkYzEyNTRjIiwiZGoiOjYsImlpIjoiMjY4YTMwNjY0MDA3NDQ3MjhhM2IzYjk4ZDEwNmI4Y2EiLCJkbSI6MywiZmMiOjg4OTIxNTE2NCwiZmwiOjgzNjc5ODExOCwiaXAiOiIzNC4xNjguMTkyLjIxMyIsImt3IjoidXMsdXMtbWUiLCJtayI6InVzIiwibnciOjEwMjUwLCJwYyI6MC41NSwib3AiOjAuNTUsIm1wIjowLjU1LCJlYyI6MCwiZ20iOjAsImVwIjpudWxsLCJwciI6MjU0NjQ4LCJydCI6MiwicnMiOjUwMCwic2EiOiI5NiIsInNiIjoiaS0wNzY2Zjg2NTQzNjQ2ZDI5MCIsInNwIjo3Mzc5NzUsInN0IjoxMDcwMDk4LCJ1ayI6InsxYmM4OThjZC1lZmUyLTRhZTktOTZmOC0zNTYzMTZjMGQxMjR9Iiwiem4iOjIxNzc1OCwiem0iOlsyMTc5OTVdLCJ0cyI6MTc1MDA5ODkxMDk4NSwicG4iOiJzcG9jcyIsImdjIjp0cnVlLCJnQyI6dHJ1ZSwiZ3MiOiJub25lIiwiZGMiOjEsInR6IjoiVVRDIiwiYmEiOjEsImZxIjoxfQ,NZZL1P-0UlHdM58KbpGtLozn8uc",
+								"click": "0,eyJ2IjoiMS4xMyIsImF2IjoyMjE5OTgyLCJhdCI6MzYxNywiYnQiOjAsImNtIjoxMjE3NTMwNDEsImNoIjozNjg0OCwiY2siOnt9LCJjciI6NzA3ODExNDgxLCJkaSI6ImJiODEwY2EyYmE5ZjQ0MmJhNjg1NzhjNTRkYzEyNTRjIiwiZGoiOjYsImlpIjoiMjY4YTMwNjY0MDA3NDQ3MjhhM2IzYjk4ZDEwNmI4Y2EiLCJkbSI6MywiZmMiOjg4OTIxNTE2NCwiZmwiOjgzNjc5ODExOCwiaXAiOiIzNC4xNjguMTkyLjIxMyIsImt3IjoidXMsdXMtbWUiLCJtayI6InVzIiwibnciOjEwMjUwLCJwYyI6MC41NSwib3AiOjAuNTUsIm1wIjowLjU1LCJlYyI6MCwiZ20iOjAsImVwIjpudWxsLCJwciI6MjU0NjQ4LCJydCI6MiwicnMiOjUwMCwic2EiOiI5NiIsInNiIjoiaS0wNzY2Zjg2NTQzNjQ2ZDI5MCIsInNwIjo3Mzc5NzUsInN0IjoxMDcwMDk4LCJ1ayI6InsxYmM4OThjZC1lZmUyLTRhZTktOTZmOC0zNTYzMTZjMGQxMjR9Iiwiem4iOjIxNzc1OCwiem0iOlsyMTc5OTVdLCJ0cyI6MTc1MDA5ODkxMDk4NSwicG4iOiJzcG9jcyIsImdjIjp0cnVlLCJnQyI6dHJ1ZSwiZ3MiOiJub25lIiwiZGMiOjEsInR6IjoiVVRDIiwidXIiOm51bGx9,-d03nk5MpMfNvC64g8dhiX3Kq6g",
+								"delete": "",
+								"save": ""
+							},
+							"parameter_set": "default",
+							"caps": {
+								"lifetime": 50,
+								"campaign": {
+									"count": 10,
+									"period": 86400
+								},
+								"flight": {
+									"count": 10,
+									"period": 86400
+								}
+							},
+							"domain_affinities": {},
+							"personalization_models": {
+								"arts_and_entertainment": 1,
+								"autos_and_vehicles": 1,
+								"beauty_and_fitness": 1,
+								"blogging_resources_and_services": 1,
+								"books_and_literature": 1,
+								"business_and_industrial": 1,
+								"computers_and_electronics": 1,
+								"finance": 1,
+								"food_and_drink": 1,
+								"games": 1,
+								"health": 1,
+								"hobbies_and_leisure": 1,
+								"home_and_garden": 1,
+								"internet_and_telecom": 1,
+								"jobs_and_education": 1,
+								"law_and_government": 1,
+								"online_communities": 1,
+								"people_and_society": 1,
+								"pets_and_animals": 1,
+								"real_estate": 1,
+								"reference": 1,
+								"science": 1,
+								"shopping": 1,
+								"sports": 1,
+								"travel": 1
+							},
+							"min_score": 0.1,
+							"item_score": 0.2,
+							"sponsor": "hear.com",
+							"fetchTimestamp": 1750098911563,
+							"score": 0.2
+						},
+						{
+							"id": 892487332,
+							"flight_id": 838906891,
+							"campaign_id": 58056767,
+							"title": "Hands Down the Best Balance Transfer Card of 2025",
+							"url": "https://cardcritics.com/best-card-for-balance-transfers/?tc=pckt-ac1-lp93-ci688-hl459-pc0-lc423-04092025&pub_adconcept=ac1&pub_image=ci688&pub_headline=hl459&pub_subheadline=lc423&costid=755&cbm=pc&pub_inventory=fin311",
+							"domain": "cardcritics.com",
+							"excerpt": "Enjoy the peace of mind that comes with 18 months of 0% APR on balance transfers.",
+							"priority": 10,
+							"context": "Sponsored by CardCritics",
+							"raw_image_src": "https://s.zkcdn.net/Advertisers/d632eedd28234a3d96cef792242b9915.png",
+							"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Fd632eedd28234a3d96cef792242b9915.png&resize=w618-h310",
+							"shim": {
+								"impression": "1,eyJ2IjoiMS4xMyIsImF2IjoxOTcxMTI2LCJhdCI6MzYxNywiYnQiOjAsImNtIjo1ODA1Njc2NywiY2giOjM2ODQ4LCJjayI6e30sImNyIjo2NzgyODQwOTcsImRpIjoiYmI4MTBjYTJiYTlmNDQyYmE2ODU3OGM1NGRjMTI1NGMiLCJkaiI6NywiaWkiOiI2ODQ3MDNhNGZkNGU0ZWE5YmQyOWRlMmNlZTZkOTk5YSIsImRtIjozLCJmYyI6ODkyNDg3MzMyLCJmbCI6ODM4OTA2ODkxLCJpcCI6IjM0LjE2OC4xOTIuMjEzIiwia3ciOiJ1cyx1cy1tZSIsIm1rIjoidXMiLCJudyI6MTAyNTAsInBjIjowLjI1LCJvcCI6MC4yNSwibXAiOjAuMjUsImVjIjowLCJnbSI6MCwiZXAiOm51bGwsInByIjoxNDc1MjAsInJ0IjoyLCJycyI6NTAwLCJzYSI6Ijk2Iiwic2IiOiJpLTA3NjZmODY1NDM2NDZkMjkwIiwic3AiOjczNzk3NSwic3QiOjEwNzAwOTgsInVrIjoiezFiYzg5OGNkLWVmZTItNGFlOS05NmY4LTM1NjMxNmMwZDEyNH0iLCJ6biI6MjE3NzU4LCJ6bSI6WzIxNzk5NV0sInRzIjoxNzUwMDk4OTEwOTg1LCJwbiI6InNwb2NzIiwiZ2MiOnRydWUsImdDIjp0cnVlLCJncyI6Im5vbmUiLCJkYyI6MSwidHoiOiJVVEMiLCJiYSI6MSwiZnEiOjF9,g0-Q_wM4Qrj0A0pk2gfmKJ46-C0",
+								"click": "0,eyJ2IjoiMS4xMyIsImF2IjoxOTcxMTI2LCJhdCI6MzYxNywiYnQiOjAsImNtIjo1ODA1Njc2NywiY2giOjM2ODQ4LCJjayI6e30sImNyIjo2NzgyODQwOTcsImRpIjoiYmI4MTBjYTJiYTlmNDQyYmE2ODU3OGM1NGRjMTI1NGMiLCJkaiI6NywiaWkiOiI2ODQ3MDNhNGZkNGU0ZWE5YmQyOWRlMmNlZTZkOTk5YSIsImRtIjozLCJmYyI6ODkyNDg3MzMyLCJmbCI6ODM4OTA2ODkxLCJpcCI6IjM0LjE2OC4xOTIuMjEzIiwia3ciOiJ1cyx1cy1tZSIsIm1rIjoidXMiLCJudyI6MTAyNTAsInBjIjowLjI1LCJvcCI6MC4yNSwibXAiOjAuMjUsImVjIjowLCJnbSI6MCwiZXAiOm51bGwsInByIjoxNDc1MjAsInJ0IjoyLCJycyI6NTAwLCJzYSI6Ijk2Iiwic2IiOiJpLTA3NjZmODY1NDM2NDZkMjkwIiwic3AiOjczNzk3NSwic3QiOjEwNzAwOTgsInVrIjoiezFiYzg5OGNkLWVmZTItNGFlOS05NmY4LTM1NjMxNmMwZDEyNH0iLCJ6biI6MjE3NzU4LCJ6bSI6WzIxNzk5NV0sInRzIjoxNzUwMDk4OTEwOTg1LCJwbiI6InNwb2NzIiwiZ2MiOnRydWUsImdDIjp0cnVlLCJncyI6Im5vbmUiLCJkYyI6MSwidHoiOiJVVEMiLCJ1ciI6bnVsbH0,5JdkWQ_0gtJIpQmf14k7G0d5V5U",
+								"delete": "",
+								"save": ""
+							},
+							"parameter_set": "default",
+							"caps": {
+								"lifetime": 50,
+								"campaign": {
+									"count": 10,
+									"period": 86400
+								},
+								"flight": {
+									"count": 10,
+									"period": 86400
+								}
+							},
+							"domain_affinities": {},
+							"personalization_models": {
+								"arts_and_entertainment": 1,
+								"autos_and_vehicles": 1,
+								"beauty_and_fitness": 1,
+								"blogging_resources_and_services": 1,
+								"books_and_literature": 1,
+								"business_and_industrial": 1,
+								"computers_and_electronics": 1,
+								"finance": 1,
+								"food_and_drink": 1,
+								"games": 1,
+								"health": 1,
+								"hobbies_and_leisure": 1,
+								"home_and_garden": 1,
+								"internet_and_telecom": 1,
+								"jobs_and_education": 1,
+								"law_and_government": 1,
+								"online_communities": 1,
+								"people_and_society": 1,
+								"pets_and_animals": 1,
+								"real_estate": 1,
+								"reference": 1,
+								"science": 1,
+								"shopping": 1,
+								"sports": 1,
+								"travel": 1
+							},
+							"min_score": 0.1,
+							"item_score": 0.2,
+							"sponsor": "CardCritics",
+							"fetchTimestamp": 1750098911563,
+							"score": 0.2
+						},
+						{
+							"id": 895276056,
+							"flight_id": 790837812,
+							"campaign_id": 1294430,
+							"title": "Together We Can Shape the Future of Technology. Donate to Mozilla Foundation Today",
+							"url": "https://mozillafoundation.org/?form=FUNFMHQBQEV",
+							"domain": "mozillafoundation.org",
+							"excerpt": "Help advance crucial Mozilla programs for an open, accessible Internet. Your support is important.",
+							"priority": 10,
+							"context": "Sponsored by Mozilla Foundation",
+							"raw_image_src": "https://s.zkcdn.net/Advertisers/69bf2191d3d944f6b112edbabf0de16a.png",
+							"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F69bf2191d3d944f6b112edbabf0de16a.png&resize=w618-h310",
+							"shim": {
+								"impression": "1,eyJ2IjoiMS4xMyIsImF2Ijo1MzYzMjcsImF0IjozNjE3LCJidCI6MCwiY20iOjEyOTQ0MzAsImNoIjozNjg0OCwiY2siOnt9LCJjciI6NzIwOTg1MzU1LCJkaSI6ImJiODEwY2EyYmE5ZjQ0MmJhNjg1NzhjNTRkYzEyNTRjIiwiZGoiOjgsImlpIjoiZTAyZjQzNzY2NjU3NDRkYmEzNDdlZGU4MjMwY2FlMzgiLCJkbSI6MywiZmMiOjg5NTI3NjA1NiwiZmwiOjc5MDgzNzgxMiwiaXAiOiIzNC4xNjguMTkyLjIxMyIsImt3IjoidXMsdXMtbWUiLCJtayI6InVzIiwibnciOjEwMjUwLCJwYyI6MCwib3AiOjAsIm1wIjowLCJlYyI6MCwiZ20iOjAsImVwIjpudWxsLCJwciI6MTQ3NTIwLCJydCI6MiwicnMiOjUwMCwic2EiOiI5NiIsInNiIjoiaS0wNzY2Zjg2NTQzNjQ2ZDI5MCIsInNwIjo3Mzc5NzUsInN0IjoxMDcwMDk4LCJ1ayI6InsxYmM4OThjZC1lZmUyLTRhZTktOTZmOC0zNTYzMTZjMGQxMjR9Iiwiem4iOjIxNzc1OCwiem0iOlsyMTc5OTVdLCJ0cyI6MTc1MDA5ODkxMDk4NiwicG4iOiJzcG9jcyIsImdjIjp0cnVlLCJnQyI6dHJ1ZSwiZ3MiOiJub25lIiwiZGMiOjEsInR6IjoiVVRDIiwiYmEiOjEsImZxIjowfQ,rk_tT8fgaOFG--NaJdh0TL935VM",
+								"click": "0,eyJ2IjoiMS4xMyIsImF2Ijo1MzYzMjcsImF0IjozNjE3LCJidCI6MCwiY20iOjEyOTQ0MzAsImNoIjozNjg0OCwiY2siOnt9LCJjciI6NzIwOTg1MzU1LCJkaSI6ImJiODEwY2EyYmE5ZjQ0MmJhNjg1NzhjNTRkYzEyNTRjIiwiZGoiOjgsImlpIjoiZTAyZjQzNzY2NjU3NDRkYmEzNDdlZGU4MjMwY2FlMzgiLCJkbSI6MywiZmMiOjg5NTI3NjA1NiwiZmwiOjc5MDgzNzgxMiwiaXAiOiIzNC4xNjguMTkyLjIxMyIsImt3IjoidXMsdXMtbWUiLCJtayI6InVzIiwibnciOjEwMjUwLCJwYyI6MCwib3AiOjAsIm1wIjowLCJlYyI6MCwiZ20iOjAsImVwIjpudWxsLCJwciI6MTQ3NTIwLCJydCI6MiwicnMiOjUwMCwic2EiOiI5NiIsInNiIjoiaS0wNzY2Zjg2NTQzNjQ2ZDI5MCIsInNwIjo3Mzc5NzUsInN0IjoxMDcwMDk4LCJ1ayI6InsxYmM4OThjZC1lZmUyLTRhZTktOTZmOC0zNTYzMTZjMGQxMjR9Iiwiem4iOjIxNzc1OCwiem0iOlsyMTc5OTVdLCJ0cyI6MTc1MDA5ODkxMDk4NiwicG4iOiJzcG9jcyIsImdjIjp0cnVlLCJnQyI6dHJ1ZSwiZ3MiOiJub25lIiwiZGMiOjEsInR6IjoiVVRDIiwidXIiOm51bGx9,tBRI4Hrdbyh9soYp-Gobtwy8ueI",
+								"delete": "",
+								"save": ""
+							},
+							"parameter_set": "default",
+							"caps": {
+								"lifetime": 50,
+								"campaign": {
+									"count": 10,
+									"period": 86400
+								},
+								"flight": {
+									"count": 10,
+									"period": 86400
+								}
+							},
+							"domain_affinities": {},
+							"personalization_models": {},
+							"min_score": 0.1,
+							"item_score": 0.2,
+							"sponsor": "Mozilla Foundation",
+							"fetchTimestamp": 1750098911563,
+							"score": 0.2
+						},
+						{
+							"id": 867877203,
+							"flight_id": 822650491,
+							"campaign_id": 619866132,
+							"title": "Create Your Free Website and Connect Your Domain for Free",
+							"url": "https://soloist.ai/onboarding?utm_source=new-tab&utm_medium=firefox-desktop&utm_campaign=native-article-cards",
+							"domain": "soloist.ai",
+							"excerpt": "Meet Solo AI - new product from Mozilla.",
+							"priority": 10,
+							"context": "Sponsored by Solo AI Website Creator",
+							"raw_image_src": "https://s.zkcdn.net/Advertisers/c54db1cd6eec4f1eb436f9a9b2399604.png",
+							"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2Fc54db1cd6eec4f1eb436f9a9b2399604.png&resize=w618-h310",
+							"shim": {
+								"impression": "1,eyJ2IjoiMS4xMyIsImF2Ijo1MzYxMjcsImF0IjozNjE3LCJidCI6MCwiY20iOjYxOTg2NjEzMiwiY2giOjM2ODQ4LCJjayI6e30sImNyIjo2OTM1OTk0OTcsImRpIjoiYmI4MTBjYTJiYTlmNDQyYmE2ODU3OGM1NGRjMTI1NGMiLCJkaiI6OSwiaWkiOiJjZDJmODg2ODU5NWE0YmJkODZhNjY3MTQ3OWU2M2E4NCIsImRtIjozLCJmYyI6ODY3ODc3MjAzLCJmbCI6ODIyNjUwNDkxLCJpcCI6IjM0LjE2OC4xOTIuMjEzIiwia3ciOiJ1cyx1cy1tZSIsIm1rIjoidXMiLCJudyI6MTAyNTAsInBjIjowLCJvcCI6MCwibXAiOjAsImVjIjowLCJnbSI6MCwiZXAiOm51bGwsInByIjoxNDc1MjAsInJ0IjoxLCJycyI6NTAwLCJzYSI6Ijk2Iiwic2IiOiJpLTA3NjZmODY1NDM2NDZkMjkwIiwic3AiOjczNzk3NSwic3QiOjEwNzAwOTgsInVrIjoiezFiYzg5OGNkLWVmZTItNGFlOS05NmY4LTM1NjMxNmMwZDEyNH0iLCJ6biI6MjE3NzU4LCJ6bSI6WzIxNzk5NV0sInRzIjoxNzUwMDk4OTEwOTg2LCJwbiI6InNwb2NzIiwiZ2MiOnRydWUsImdDIjp0cnVlLCJncyI6Im5vbmUiLCJkYyI6MSwidHoiOiJVVEMiLCJiYSI6MSwiZnEiOjF9,cKhingX0ThP30IS4fHGpXdQpxic",
+								"click": "0,eyJ2IjoiMS4xMyIsImF2Ijo1MzYxMjcsImF0IjozNjE3LCJidCI6MCwiY20iOjYxOTg2NjEzMiwiY2giOjM2ODQ4LCJjayI6e30sImNyIjo2OTM1OTk0OTcsImRpIjoiYmI4MTBjYTJiYTlmNDQyYmE2ODU3OGM1NGRjMTI1NGMiLCJkaiI6OSwiaWkiOiJjZDJmODg2ODU5NWE0YmJkODZhNjY3MTQ3OWU2M2E4NCIsImRtIjozLCJmYyI6ODY3ODc3MjAzLCJmbCI6ODIyNjUwNDkxLCJpcCI6IjM0LjE2OC4xOTIuMjEzIiwia3ciOiJ1cyx1cy1tZSIsIm1rIjoidXMiLCJudyI6MTAyNTAsInBjIjowLCJvcCI6MCwibXAiOjAsImVjIjowLCJnbSI6MCwiZXAiOm51bGwsInByIjoxNDc1MjAsInJ0IjoxLCJycyI6NTAwLCJzYSI6Ijk2Iiwic2IiOiJpLTA3NjZmODY1NDM2NDZkMjkwIiwic3AiOjczNzk3NSwic3QiOjEwNzAwOTgsInVrIjoiezFiYzg5OGNkLWVmZTItNGFlOS05NmY4LTM1NjMxNmMwZDEyNH0iLCJ6biI6MjE3NzU4LCJ6bSI6WzIxNzk5NV0sInRzIjoxNzUwMDk4OTEwOTg2LCJwbiI6InNwb2NzIiwiZ2MiOnRydWUsImdDIjp0cnVlLCJncyI6Im5vbmUiLCJkYyI6MSwidHoiOiJVVEMiLCJ1ciI6bnVsbH0,li8CsUL55VJxjU0ajCDZHf8yWeg",
+								"delete": "",
+								"save": ""
+							},
+							"parameter_set": "default",
+							"caps": {
+								"lifetime": 50,
+								"campaign": {
+									"count": 10,
+									"period": 86400
+								},
+								"flight": {
+									"count": 10,
+									"period": 86400
+								}
+							},
+							"domain_affinities": {},
+							"personalization_models": {},
+							"min_score": 0.1,
+							"item_score": 0.2,
+							"sponsor": "Solo AI Website Creator",
+							"fetchTimestamp": 1750098911563,
+							"score": 0.2
+						}
+					]
+				},
+				"sponsored-topsites": {
+					"title": "",
+					"context": "",
+					"items": []
+				}
+			},
+			"loaded": true,
+			"frequency_caps": [],
+			"blocked": [],
+			"placements": [
+				{
+					"name": "sponsored-topsites",
+					"ad_types": [
+						3120
+					],
+					"zone_ids": [
+						280143
+					]
+				},
+				{
+					"name": "spocs",
+					"ad_types": [
+						3617
+					],
+					"zone_ids": [
+						217758,
+						217995
+					]
+				}
+			]
+		},
+		"experimentData": {
+			"utmSource": "pocket-newtab"
+		},
+		"recentSavesData": [],
+		"isUserLoggedIn": false,
+		"recentSavesEnabled": false,
+		"pocketButtonEnabled": true,
+		"saveToPocketCard": true,
+		"hideDescriptions": false,
+		"compactImages": false,
+		"imageGradient": false,
+		"newSponsoredLabel": false,
+		"titleLines": 3,
+		"descLines": 3,
+		"readTime": true
+	},
+	"Search": {
+		"fakeFocus": false,
+		"hide": false
+	},
+	"Wallpapers": {
+		"wallpaperList": [],
+		"highlightSeenCounter": {
+			"value": 0
+		},
+		"categories": []
+	},
+	"Weather": {
+		"initialized": false,
+		"lastUpdated": null,
+		"query": "",
+		"suggestions": [],
+		"locationData": {
+			"city": "",
+			"adminArea": "",
+			"country": ""
+		},
+		"searchActive": false,
+		"locationSearchString": "",
+		"suggestedLocations": []
+	}
+};
+
+�� x�           hPc�HN�����       :about:home alt-data 1;78680,script version 20250519114620  ��
